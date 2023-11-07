@@ -1,22 +1,21 @@
-import styled from 'styled-components';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Container from './page/Container';
+import About from './page/About';
+import MainLayout from './components/MainLayout';
 
 function App() {
   return (
     <BrowserRouter>
-      <MainContent>
-        <p>Content goes here...</p>
-      </MainContent>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Container />} />
+          Container
+          <Route path="/container" element={<About />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
-
-const MainContent = styled.div`
-  height: 100vh;
-  margin: 0 auto;
-  overflow-y: hidden;
-  padding: 20px;
-`;
 
 export default App;
