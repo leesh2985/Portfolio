@@ -101,6 +101,7 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  list-style: none;
 }
 a {
   text-decoration: none;
