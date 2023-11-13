@@ -9,7 +9,7 @@ export default function Career() {
 }
 
 const CareerContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;

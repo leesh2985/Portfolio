@@ -49,7 +49,7 @@ export default function Projects() {
 }
 
 const ProjectsContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,11 +87,12 @@ const Left = styled.div`
 `;
 const Right = styled.div`
   ${LNG}
-  padding: 0 10px;
+  padding: 0 10px 0 20px;
 `;
 
 const ProjectsImg = styled.img`
   border: 1px solid #c9c9c9;
+  border-radius: 15px;
 `;
 
 const ProjectsMake = styled.div`
@@ -124,7 +125,7 @@ const LinkSite = styled.div`
 
 const LinkStyle = css`
   color: #242424;
-  font-size: 30px;
+  font-size: 40px;
   margin-right: 20px;
 `;
 

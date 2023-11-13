@@ -67,7 +67,7 @@ export default function About() {
 }
 
 const AboutContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -78,6 +78,7 @@ const AboutContainer = styled.div`
 
 const InfoContainer = styled.div`
   margin-right: 25px;
+  width: 30%;
 `;
 
 const PersonIcon = styled(BsPerson)``;
@@ -88,7 +89,7 @@ const PhoneIcon = styled(FiSmartphone)``;
 const DocumenIcon = styled(GrDocumentPdf)``;
 
 const MyImg = styled.img`
-  width: 340px;
+  width: 100%;
   height: 425px;
   margin-bottom: 20px;
   border-radius: 15px;
@@ -100,7 +101,7 @@ const MyImg = styled.img`
 const Info = styled.div`
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 340px;
+  width: 100%;
   height: 210px;
   border-radius: 15px;
   background-color: #fff;
@@ -112,7 +113,7 @@ const InfoText = styled.div`
 `;
 
 const IntroduceContainer = styled.div`
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 `;

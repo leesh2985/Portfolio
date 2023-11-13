@@ -38,6 +38,9 @@ export default function Skill() {
             <SkillItem>
               <Img src="/img/bootstrap.png" alt="bootstrap" />
             </SkillItem>
+            <SkillItem>
+              <Img src="/img/vite.png" alt="vite" />
+            </SkillItem>
           </SkillList>
         </FeSkill>
 
@@ -84,7 +87,7 @@ export default function Skill() {
 }
 
 const SkillContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
