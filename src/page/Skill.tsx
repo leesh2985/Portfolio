@@ -1,17 +1,71 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
+interface SkillData {
+  name: string;
+  src: string;
+}
+
+interface SkillTabs {
+  [key: string]: SkillData[];
+  FE: SkillData[];
+  BE: SkillData[];
+  ETC: SkillData[];
+}
+
+const skillData: SkillTabs = {
+  FE: [
+    { name: 'HTML', src: '/img/html.png' },
+    { name: 'CSS', src: '/img/css3.png' },
+    { name: 'JavaScript', src: '/img/js.png' },
+    { name: 'Sass', src: '/img/sass.png' },
+    { name: 'Styled Components', src: '/img/styled-components.png' },
+    { name: 'Redux', src: '/img/redux.png' },
+    { name: 'React', src: '/img/react.png' },
+    { name: 'TypeScript', src: '/img/type.png' },
+    { name: 'jQuery', src: '/img/jquery.png' },
+    { name: 'Bootstrap', src: '/img/bootstrap.png' },
+  ],
+  BE: [
+    { name: 'Node.js', src: '/img/node.png' },
+    { name: 'Firebase', src: '/img/firebase.png' },
+  ],
+  ETC: [
+    { name: 'GitHub', src: '/img/github.png' },
+    { name: 'Figma', src: '/img/figma.png' },
+  ],
+};
+
 export default function Skill() {
+  const [activeTab, setActiveTab] = useState<string>('FE');
+
+  const handleTabClick = (tabName: string) => {
+    setActiveTab(tabName);
+  };
+
   return (
     <SkillContainer>
       <SkillTitle>My Skills</SkillTitle>
-      <SkillList>
-        <SkillItem>
-          FE<SkillSpan>Click me!</SkillSpan>
-        </SkillItem>
-        <SkillItem>
-          ETC<SkillSpan>Click me!</SkillSpan>
-        </SkillItem>
-      </SkillList>
+      <List>
+        <SkillList>
+          <SkillName onClick={() => handleTabClick('FE')} $active={activeTab === 'FE'}>
+            FE
+          </SkillName>
+          <SkillName onClick={() => handleTabClick('BE')} $active={activeTab === 'BE'}>
+            BE
+          </SkillName>
+          <SkillName onClick={() => handleTabClick('ETC')} $active={activeTab === 'ETC'}>
+            ETC
+          </SkillName>
+        </SkillList>
+        <SkillDetails>
+          {skillData[activeTab].map((skill, index) => (
+            <SkillListItem key={index}>
+              <SkillIcon src={skill.src} alt={skill.name} />
+            </SkillListItem>
+          ))}
+        </SkillDetails>
+      </List>
     </SkillContainer>
   );
 }
@@ -19,7 +73,6 @@ export default function Skill() {
 const SkillContainer = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
   padding: 50px;
   background: blue;
@@ -31,21 +84,24 @@ const SkillTitle = styled.h2`
   font-weight: bold;
 `;
 
-const SkillList = styled.ul`
+const List = styled.div`
   display: flex;
-  list-style: none;
-  padding: 0;
+  flex-direction: column;
 `;
 
-const SkillItem = styled.li`
+const SkillList = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+const SkillName = styled.li<{ $active: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   font-size: 23px;
   font-weight: 500;
   margin-top: 20px;
-  margin-right: 50px;
   background-color: #fff;
   width: 100px;
   height: 100px;
@@ -53,19 +109,32 @@ const SkillItem = styled.li`
   cursor: pointer;
   border: 5px solid yellow;
 
-  &:last-child {
-    margin-right: 0px;
+  &:active {
+    color: #d9d9d9;
+    font-weight: bold;
   }
 `;
 
-const SkillSpan = styled.span`
-  font-size: 10px;
-  color: #d9d9d9;
+const SkillDetails = styled.ul`
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
-  @keyframes blink-effect {
-    50% {
-      opacity: 0;
-    }
-  }
-  animation: blink-effect 1s step-end infinite;
+const SkillListItem = styled.li`
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SkillIcon = styled.img`
+  width: 80%;
+  height: auto;
 `;
