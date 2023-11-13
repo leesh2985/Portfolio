@@ -5,8 +5,12 @@ export default function Skill() {
     <SkillContainer>
       <SkillTitle>My Skills</SkillTitle>
       <SkillList>
-        <SkillItem>FE</SkillItem>
-        <SkillItem>ETC</SkillItem>
+        <SkillItem>
+          FE<SkillSpan>Click me!</SkillSpan>
+        </SkillItem>
+        <SkillItem>
+          ETC<SkillSpan>Click me!</SkillSpan>
+        </SkillItem>
       </SkillList>
     </SkillContainer>
   );
@@ -37,17 +41,31 @@ const SkillItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  flex-direction: column;
+  font-size: 23px;
+  font-weight: 500;
   margin-top: 20px;
   margin-right: 50px;
   background-color: #fff;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
-  font-weight: 600;
   cursor: pointer;
+  border: 5px solid yellow;
 
   &:last-child {
     margin-right: 0px;
   }
+`;
+
+const SkillSpan = styled.span`
+  font-size: 10px;
+  color: #d9d9d9;
+
+  @keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
+  animation: blink-effect 1s step-end infinite;
 `;
