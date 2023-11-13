@@ -1,70 +1,83 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-
-interface SkillData {
-  name: string;
-  src: string;
-}
-
-interface SkillTabs {
-  [key: string]: SkillData[];
-  FE: SkillData[];
-  BE: SkillData[];
-  ETC: SkillData[];
-}
-
-const skillData: SkillTabs = {
-  FE: [
-    { name: 'HTML', src: '/img/html.png' },
-    { name: 'CSS', src: '/img/css3.png' },
-    { name: 'JavaScript', src: '/img/js.png' },
-    { name: 'Sass', src: '/img/sass.png' },
-    { name: 'Styled Components', src: '/img/styled-components.png' },
-    { name: 'Redux', src: '/img/redux.png' },
-    { name: 'React', src: '/img/react.png' },
-    { name: 'TypeScript', src: '/img/type.png' },
-    { name: 'jQuery', src: '/img/jquery.png' },
-    { name: 'Bootstrap', src: '/img/bootstrap.png' },
-  ],
-  BE: [
-    { name: 'Node.js', src: '/img/node.png' },
-    { name: 'Firebase', src: '/img/firebase.png' },
-  ],
-  ETC: [
-    { name: 'GitHub', src: '/img/github.png' },
-    { name: 'Figma', src: '/img/figma.png' },
-  ],
-};
+import styled, { css } from 'styled-components';
 
 export default function Skill() {
-  const [activeTab, setActiveTab] = useState<string>('FE');
-
-  const handleTabClick = (tabName: string) => {
-    setActiveTab(tabName);
-  };
-
   return (
     <SkillContainer>
       <SkillTitle>My Skills</SkillTitle>
       <List>
-        <SkillList>
-          <SkillName onClick={() => handleTabClick('FE')} $active={activeTab === 'FE'}>
-            FE
-          </SkillName>
-          <SkillName onClick={() => handleTabClick('BE')} $active={activeTab === 'BE'}>
-            BE
-          </SkillName>
-          <SkillName onClick={() => handleTabClick('ETC')} $active={activeTab === 'ETC'}>
-            ETC
-          </SkillName>
-        </SkillList>
-        <SkillDetails>
-          {skillData[activeTab].map((skill, index) => (
-            <SkillListItem key={index}>
-              <SkillIcon src={skill.src} alt={skill.name} />
-            </SkillListItem>
-          ))}
-        </SkillDetails>
+        <FeSkill>
+          <SkillListTitle>FrontEnd</SkillListTitle>
+          <SkillList>
+            <SkillItem>
+              <Img src="/img/html.png" alt="html" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/css3.png" alt="css3" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/js.png" alt="js" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/sass.png" alt="sass" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/styled-components.png" alt="styled-components" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/redux.png" alt="redux" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/react.png" alt="react" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/type.png" alt="typescript" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/jquery.png" alt="jquery" />
+            </SkillItem>
+            <SkillItem>
+              <Img src="/img/bootstrap.png" alt="bootstrap" />
+            </SkillItem>
+          </SkillList>
+        </FeSkill>
+
+        <BNE>
+          <BeSkill>
+            <SkillListTitle>BackEnd</SkillListTitle>
+            <SkillList>
+              <SkillItem>
+                <Img src="/img/node.png" alt="node" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/firebase.png" alt="firebase" />
+              </SkillItem>
+            </SkillList>
+          </BeSkill>
+
+          <EtcSkill>
+            <SkillListTitle>ETC</SkillListTitle>
+            <SkillList>
+              <SkillItem>
+                <Img src="/img/github.png" alt="github" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/figma.png" alt="피그마" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/git.png" alt="git" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/ps.png" alt="ps" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/ai.png" alt="ai" />
+              </SkillItem>
+              <SkillItem>
+                <Img src="/img/vercel.png" alt="버셀" />
+              </SkillItem>
+            </SkillList>
+          </EtcSkill>
+        </BNE>
       </List>
     </SkillContainer>
   );
@@ -74,6 +87,7 @@ const SkillContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 50px;
   background: blue;
   border-bottom: 2px dashed #ceb8b8;
@@ -86,55 +100,78 @@ const SkillTitle = styled.h2`
 
 const List = styled.div`
   display: flex;
-  flex-direction: column;
-`;
-
-const SkillList = styled.ul`
-  display: flex;
-  justify-content: space-around;
   width: 100%;
+  margin-top: 20px;
 `;
 
-const SkillName = styled.li<{ $active: boolean }>`
+const ListUl = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 23px;
-  font-weight: 500;
-  margin-top: 20px;
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  cursor: pointer;
-  border: 5px solid yellow;
+  flex-wrap: wrap;
+`;
 
-  &:active {
-    color: #d9d9d9;
-    font-weight: bold;
+const ListLi = css`
+  margin: 20px;
+`;
+
+const hoverEffect = css`
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.2); /* 이미지 크기 확대 효과 */
   }
 `;
 
-const SkillDetails = styled.ul`
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const SkillListItem = styled.li`
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  margin: 0 20px 20px 0;
+const FeSkill = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  margin-right: 20px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 `;
 
-const SkillIcon = styled.img`
-  width: 80%;
-  height: auto;
+const SkillListTitle = styled.div`
+  font-size: 30px;
+  font-weight: 700;
+  margin: 20px 0;
+`;
+
+const SkillList = styled.ul`
+  ${ListUl}
+`;
+const SkillItem = styled.li`
+  ${ListLi}
+`;
+const Img = styled.img`
+  ${hoverEffect}
+`;
+
+const BNE = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const BeSkill = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+`;
+
+const EtcSkill = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  margin-top: 20px;
 `;
