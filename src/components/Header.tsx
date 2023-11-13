@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Logo src="..." alt="Logo" />
+        <Logo>LSG</Logo>
       </LogoContainer>
       <Nav>
         <NavItem>
@@ -38,7 +38,11 @@ const HeaderContainer = styled.div`
 `;
 
 const LogoContainer = styled.div``;
-const Logo = styled.img``;
+
+const Logo = styled.div`
+  font-size: 30px;
+  font-weight: 700;
+`;
 
 const Nav = styled.nav`
   display: flex;
