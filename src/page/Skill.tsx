@@ -102,19 +102,9 @@ const SkillTitle = styled.h2`
 
 const List = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
   margin-top: 40px;
-`;
-
-const ListUl = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
-const ListLi = css`
-  margin: 20px;
 `;
 
 const hoverEffect = css`
@@ -138,7 +128,6 @@ const SkillDiv = css`
 const FeSkill = styled.div`
   ${SkillDiv}
   width: 100%;
-  height: 100%;
   margin-right: 20px;
 `;
 
@@ -158,11 +147,14 @@ const SkillListTitle = styled.div`
 `;
 
 const SkillList = styled.ul`
-  ${ListUl}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const SkillItem = styled.li`
-  ${ListLi}
+  margin: 20px;
 `;
 
 const Img = styled.img`

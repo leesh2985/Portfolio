@@ -142,7 +142,7 @@ const PointTitle = styled.div`
 const TextContainer = styled.div`
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 95%;
+  width: 100%;
   height: 50%;
   border-radius: 15px;
   background-color: #fff;
