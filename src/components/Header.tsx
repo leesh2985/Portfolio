@@ -17,9 +17,6 @@ export default function Header() {
         <NavItem>
           <NavLink to="/projects">Projects</NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink to="/career">Career</NavLink>
-        </NavItem>
       </Nav>
     </HeaderContainer>
   );

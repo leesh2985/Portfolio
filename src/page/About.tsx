@@ -5,6 +5,7 @@ import { LuSchool } from 'react-icons/lu';
 import { HiOutlineMail } from 'react-icons/hi';
 import { GrDocumentPdf } from 'react-icons/gr';
 import { FiSmartphone } from 'react-icons/fi';
+import { RxGithubLogo } from 'react-icons/rx';
 
 export default function About() {
   return (
@@ -33,7 +34,11 @@ export default function About() {
         </Info>
       </InfoContainer>
       <IntroduceContainer>
-        <PointTitle>문제 해결을 즐기고 새로운 기술에 도전하는 신입 개발자 이승현입니다.</PointTitle>
+        <PointTitle>
+          문제 해결을 즐기고
+          <br />
+          새로운 기술에 도전하는 신입 개발자 이승현입니다.
+        </PointTitle>
         <TextContainer>
           <IntroSection>
             <IntroTitle>Who Am I</IntroTitle>
@@ -47,17 +52,27 @@ export default function About() {
               </ol>
             </IntroContent>
           </IntroSection>
-          <IntroSection>
+          {/* <IntroSection>
             <IntroTitle>Hobby</IntroTitle>
             <IntroContent>러닝, 요가, 영화감상</IntroContent>
-          </IntroSection>
+          </IntroSection> */}
           <IntroSection>
             <IntroTitle>Career</IntroTitle>
             <IntroContent>
               <ol>
-                <li>2023.03 - 2023.11 : 제로베이스 (프론트엔드 공부)</li>
+                <li>2023.03 - 2023.11 : 제로베이스 (프론트엔드 취업 스쿨)</li>
                 <li>2021.09 - 2023.03 : 스트디오앤홈 (웹 디자이너)</li>
+                <li>2020.11 - 2021.02 : 청년취업아카데미 (UI/UX를 활용한 디지털크리에이터 양성)</li>
+                <li>2016.03 - 2021.02 : 동명대학교 졸업 (시각디자인학과)</li>
               </ol>
+            </IntroContent>
+          </IntroSection>
+          <IntroSection>
+            <IntroTitle>GitHub</IntroTitle>
+            <IntroContent>
+              <GitHub href="https://github.com/leesh2985">
+                <RxGithubLogo />
+              </GitHub>
             </IntroContent>
           </IntroSection>
         </TextContainer>
@@ -72,7 +87,7 @@ const AboutContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   padding: 50px;
-  background: red;
+  margin-top: 50px;
   border-bottom: 2px dashed #ceb8b8;
 `;
 
@@ -151,4 +166,10 @@ const IntroTitle = styled.div`
 const IntroContent = styled.div`
   font-size: 18px;
   margin-top: 10px;
+`;
+
+const GitHub = styled.a`
+  color: #242424;
+  font-size: 40px;
+  margin-right: 20px;
 `;

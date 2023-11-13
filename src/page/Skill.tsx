@@ -92,7 +92,6 @@ const SkillContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  background: blue;
   border-bottom: 2px dashed #ceb8b8;
 `;
 
@@ -104,7 +103,7 @@ const SkillTitle = styled.h2`
 const List = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 const ListUl = css`
@@ -125,17 +124,31 @@ const hoverEffect = css`
   }
 `;
 
-const FeSkill = styled.div`
+const SkillDiv = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   height: 100%;
   background: #fff;
   border-radius: 20px;
-  margin-right: 20px;
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+`;
+
+const FeSkill = styled.div`
+  ${SkillDiv}
+  width: 100%;
+  height: 100%;
+  margin-right: 20px;
+`;
+
+const BeSkill = styled.div`
+  ${SkillDiv}
+`;
+
+const EtcSkill = styled.div`
+  ${SkillDiv}
+  margin-top: 20px;
 `;
 
 const SkillListTitle = styled.div`
@@ -147,9 +160,11 @@ const SkillListTitle = styled.div`
 const SkillList = styled.ul`
   ${ListUl}
 `;
+
 const SkillItem = styled.li`
   ${ListLi}
 `;
+
 const Img = styled.img`
   ${hoverEffect}
 `;
@@ -158,23 +173,4 @@ const BNE = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-`;
-
-const BeSkill = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  background: #fff;
-  border-radius: 20px;
-`;
-
-const EtcSkill = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  background: #fff;
-  border-radius: 20px;
-  margin-top: 20px;
 `;
