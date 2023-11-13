@@ -19,10 +19,11 @@ const SkillContainer = styled.div`
   flex-direction: column;
   padding: 50px;
   background: blue;
+  border-bottom: 2px dashed #ceb8b8;
 `;
 
 const SkillTitle = styled.h2`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
 `;
 
@@ -40,9 +41,11 @@ const SkillItem = styled.li`
   margin-top: 20px;
   margin-right: 50px;
   background-color: #fff;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
+  font-weight: 600;
+  cursor: pointer;
 
   &:last-child {
     margin-right: 0px;

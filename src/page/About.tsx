@@ -73,6 +73,7 @@ const AboutContainer = styled.div`
   justify-content: center;
   padding: 50px;
   background: red;
+  border-bottom: 2px dashed #ceb8b8;
 `;
 
 const InfoContainer = styled.div`
