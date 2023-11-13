@@ -55,8 +55,8 @@ export default function About() {
             <IntroTitle>Career</IntroTitle>
             <IntroContent>
               <ol>
-                <li>2023.03 - 2023.11: 제로베이스 (프론트엔드 공부)</li>
-                <li>2021.09 - 2023.03: 스트디오앤홈 (웹 디자이너)</li>
+                <li>2023.03 - 2023.11 : 제로베이스 (프론트엔드 공부)</li>
+                <li>2021.09 - 2023.03 : 스트디오앤홈 (웹 디자이너)</li>
               </ol>
             </IntroContent>
           </IntroSection>
@@ -134,6 +134,10 @@ const TextContainer = styled.div`
 
 const IntroSection = styled.div`
   margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0px;
+  }
 `;
 
 const IntroTitle = styled.div`
