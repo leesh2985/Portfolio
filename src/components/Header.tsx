@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Logo>LSG</Logo>
+        <Logo>LSH</Logo>
       </LogoContainer>
       <Nav>
         <NavItem>
