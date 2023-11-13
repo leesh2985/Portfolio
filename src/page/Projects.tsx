@@ -134,6 +134,7 @@ const ProjectsContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 50px;
+  border-bottom: 2px dashed #ceb8b8;
 `;
 
 const ProjectsTitle = styled.h2`

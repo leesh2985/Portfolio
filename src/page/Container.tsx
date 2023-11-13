@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import About from './About';
 import Skill from './Skill';
 import Projects from './Projects';
+import Contact from './Contact';
 
 export default function Container() {
   return (
@@ -9,6 +10,7 @@ export default function Container() {
       <About />
       <Skill />
       <Projects />
+      <Contact />
     </MainContainer>
   );
 }

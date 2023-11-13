@@ -17,6 +17,9 @@ export default function Header() {
         <NavItem>
           <NavLink to="/projects">Projects</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink to="/contact">Contact</NavLink>
+        </NavItem>
       </Nav>
     </HeaderContainer>
   );
