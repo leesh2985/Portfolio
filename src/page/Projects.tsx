@@ -73,7 +73,7 @@ const projectsData: Project[] = [
     session: '23/11/13~23/11/20',
     type: '개인프로젝트',
     intro:
-      '이 프로젝트는 한눈에 보기 좋은 포트폴리오 웹사이트로, 각 작업물을 효과적으로 모아놓은 플랫폼입니다. Vite를 사용하여 개발되었으며, 가독성을 중점으로 하여 반응형 디자인을 구현하였습니다. ',
+      '한눈에 보기 좋은 포트폴리오 웹사이트로, 각 작업물을 효과적으로 모아놓은 플랫폼입니다. Vite를 사용하여 개발되었으며, 가독성을 중점으로 하여 반응형 디자인을 구현하였습니다. ',
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
