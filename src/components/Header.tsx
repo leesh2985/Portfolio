@@ -37,11 +37,11 @@ const HeaderContainer = styled.div`
   position: fixed;
 
   @media (max-width: 1024px) {
-    padding: 0px;
+    padding: 0px 20px;
   }
 
   @media (max-width: 425px) {
-    padding: 0px;
+    padding: 0px 20px;
   }
 `;
 
