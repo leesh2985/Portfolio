@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Header() {
@@ -9,16 +8,16 @@ export default function Header() {
       </LogoContainer>
       <Nav>
         <NavItem>
-          <NavLink to="/about">About me</NavLink>
+          <NavLink href="/about">About me</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/skills">Skills</NavLink>
+          <NavLink href="/skills">Skills</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink href="/projects">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
         </NavItem>
       </Nav>
     </HeaderContainer>
@@ -79,7 +78,7 @@ const NavItem = styled.li`
   }
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   text-decoration: none;
   color: #242424;
   font-weight: bold;
