@@ -13,9 +13,14 @@ export default function About() {
       <InfoContainer>
         <MyImg src="/img/me.jpg" alt="증명사진" />
         <Info>
-          <InfoText>
-            <PersonIcon />: 이승현
-          </InfoText>
+          <InfoDiv>
+            <InfoText>
+              <PersonIcon />: 이승현
+            </InfoText>
+            <InfoText>
+              <DocumenIcon />: 다운
+            </InfoText>
+          </InfoDiv>
           <InfoText>
             <CakeIcon />: 1997.12.13
           </InfoText>
@@ -28,16 +33,13 @@ export default function About() {
           <InfoText>
             <PhoneIcon />: 010-2985-8223
           </InfoText>
-          <InfoText>
-            <DocumenIcon />: 다운
-          </InfoText>
         </Info>
       </InfoContainer>
       <IntroduceContainer>
         <PointTitle>
-          문제 해결을 즐기고
+          문제 해결을 즐기고 새로운 기술에 도전하는
           <br />
-          새로운 기술에 도전하는 신입 개발자 이승현입니다.
+          신입 개발자 이승현입니다.
         </PointTitle>
         <TextContainer>
           <IntroSection>
@@ -89,11 +91,39 @@ const AboutContainer = styled.div`
   padding: 50px;
   margin-top: 50px;
   border-bottom: 2px dashed #ceb8b8;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const InfoContainer = styled.div`
   margin-right: 25px;
   width: 30%;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  @media (max-width: 675px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const PersonIcon = styled(BsPerson)``;
@@ -111,32 +141,72 @@ const MyImg = styled.img`
   object-fit: cover;
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 1440px) {
+    height: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    margin-right: 25px;
+    height: 30%;
+  }
+
+  @media (max-width: 675px) {
+    margin-right: 0px;
+    height: 580px;
+  }
+
+  @media (max-width: 425px) {
+    margin-right: 0px;
+  }
 `;
 
 const Info = styled.div`
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 210px;
+  height: 100%;
   border-radius: 15px;
   background-color: #fff;
   padding: 20px;
+
+  @media (max-width: 675px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 20px;
+  }
+`;
+
+const InfoDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const InfoText = styled.div`
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 5px;
 `;
 
 const IntroduceContainer = styled.div`
   width: 80%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const PointTitle = styled.div`
   font-weight: 700;
   font-size: 35px;
   margin-bottom: 20px;
+
+  @media (max-width: 425px) {
+    font-size: 25px;
+  }
 `;
 
 const TextContainer = styled.div`

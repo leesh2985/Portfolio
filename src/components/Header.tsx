@@ -35,6 +35,14 @@ const HeaderContainer = styled.div`
   backdrop-filter: blur(6px);
   box-shadow: none;
   position: fixed;
+
+  @media (max-width: 1024px) {
+    padding: 0px;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0px;
+  }
 `;
 
 const LogoContainer = styled.div``;
@@ -42,6 +50,11 @@ const LogoContainer = styled.div``;
 const Logo = styled.div`
   font-size: 30px;
   font-weight: 700;
+
+  @media (max-width: 425px) {
+    font-size: 25px;
+    margin-right: 30px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -54,6 +67,15 @@ const NavItem = styled.li`
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 30px;
+  }
+
+  @media (max-width: 425px) {
+    margin-right: 25px;
+    font-size: 15px;
   }
 `;
 

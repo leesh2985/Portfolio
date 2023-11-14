@@ -51,7 +51,7 @@ const projectsData: Project[] = [
   {
     imageSrc: '/img/todo.png',
     githubLink: 'https://github.com/leesh2985/Portfolio01',
-    notionLink: 'https://antique-koala-cd8.notion.site/43222cd36db74bb09c213a87995d7602?pvs=4',
+    notionLink: 'https://www.notion.so/TO-DO-99ff31d07f7c47968cac3c38c3e1c9bd',
     vercelLink: 'https://to-do-taupe.vercel.app/',
     session: '23/08/24~23/08/25',
     type: '개인프로젝트',
@@ -135,6 +135,10 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   padding: 50px;
   border-bottom: 2px dashed #ceb8b8;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const ProjectsTitle = styled.h2`
@@ -148,6 +152,20 @@ const ProjectsList = styled.ul`
   flex-wrap: wrap;
   margin-top: 40px;
   width: 90%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 630px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const ProjectsItem = styled.li`
@@ -158,7 +176,6 @@ const ProjectsItem = styled.li`
   background: #fff;
   border-radius: 20px;
   padding: 20px;
-  margin-right: 25px;
   margin-bottom: 20px;
   border: 1px solid #c9c9c9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -168,6 +185,14 @@ const ProjectsItem = styled.li`
   }
   &:last-child {
     margin-right: 0px;
+  }
+
+  @media (max-width: 630px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `;
 
@@ -218,6 +243,16 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 `;
 
 const LinkSite = styled.div``;

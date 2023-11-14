@@ -93,6 +93,14 @@ const SkillContainer = styled.div`
   align-items: center;
   padding: 50px;
   border-bottom: 2px dashed #ceb8b8;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 const SkillTitle = styled.h2`
@@ -105,6 +113,10 @@ const List = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 40px;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 
 const hoverEffect = css`
@@ -129,6 +141,11 @@ const FeSkill = styled.div`
   ${SkillDiv}
   width: 100%;
   margin-right: 20px;
+
+  @media (max-width: 425px) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
 `;
 
 const BeSkill = styled.div`
