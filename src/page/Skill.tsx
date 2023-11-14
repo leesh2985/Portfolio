@@ -94,6 +94,10 @@ const SkillContainer = styled.div`
   padding: 50px;
   border-bottom: 2px dashed #ceb8b8;
 
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
   }

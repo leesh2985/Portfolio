@@ -153,6 +153,14 @@ const ProjectsList = styled.ul`
   margin-top: 40px;
   width: 90%;
 
+  @media (max-width: 1440px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1290px) {
+    width: 100%;
+  }
+
   @media (max-width: 1024px) {
     width: 100%;
   }
@@ -243,6 +251,11 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+
+  @media (max-width: 1290px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 
   @media (max-width: 950px) {
     flex-direction: column;
