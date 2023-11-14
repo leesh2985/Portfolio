@@ -22,7 +22,7 @@ const projectsData: Project[] = [
     session: '23/09/05~23/11/10',
     type: '팀프로젝트(6인)',
     intro:
-      'Triptalk은 국내 여행의 추억과 경험을 공유하는 커뮤니티입니다. 여행 이야기를 듣고, 여행 목적지를 찾고, 더 나은 여행을 계획할 수 있는 다양한 정보를 제공합니다. 이 프로젝트는 React와 Vite를 기반으로 구축되었으며, Redux를 활용하여 상태를 효율적으로 관리합니다. Styled-components를 통해 세련된 UI를 구현하여 사용자에게 직관적이고 즐거운 경험을 제공합니다.',
+      'Triptalk은 국내 여행의 추억과 경험을 공유하는 커뮤니티입니다. 여행 이야기를 듣고, 여행 목적지를 찾고, 더 나은 여행을 계획할 수 있는 다양한 정보를 제공합니다. 이 프로젝트는 React와 Vite를 기반으로 구축되었으며, Redux를 활용하여 상태를 효율적으로 관리합니다.',
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
@@ -39,7 +39,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://hdrc.vercel.app/',
     session: '23/07/03~23/08/10',
     type: '개인프로젝트',
-    intro: `HERC 러닝 커뮤니티는 '쉽게 접하는 러닝'을 추구합니다. 러닝 모임에 참여하고 싶지만, 단체로 뛰기는 싫고 정보를 얻고 싶은 사람들을 위해 만들어진 커뮤니티입니다. 여기에서는 사용자들이 간편하게 러닝에 대한 정보를 얻고, 다른 러너들과 소통하며 소소한 모임을 즐길 수 있습니다.`,
+    intro: `HERC 러닝 커뮤니티는 단체로 뛰기는 싫고 정보를 얻고 싶은 사람들을 위해 만들어진 커뮤니티입니다. 여기에서는 사용자들이 간편하게 러닝에 대한 정보를 얻고, 다른 러너들과 소통하며 소소한 모임을 즐길 수 있습니다.`,
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
@@ -58,7 +58,7 @@ const projectsData: Project[] = [
     session: '23/08/24~23/08/25',
     type: '개인프로젝트',
     intro:
-      'To-Do list 프로젝트는 수정 및 삭제 기능을 갖추고 있습니다. 더불어, 간편하게 오늘의 완료된 작업을 표시할 수 있는 기능도 제공합니다. 사용자들은 이로써 효율적인 작업 관리와 진행 상황을 손쉽게 추적할 수 있습니다.',
+      'To-Do list 프로젝트는 수정 및 삭제 기능을 갖추고 있습니다. 더불어, 간편하게 오늘의 완료된 작업을 표시할 수 있는 기능도 제공합니다.',
     skills: [
       'https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
       'https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
@@ -72,7 +72,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://lsh-one.vercel.app/',
     session: '23/11/13~23/11/20',
     type: '개인프로젝트',
-    intro: '현재 보고있는 포트폴리오 사이트입니다.',
+    intro: '한눈에 보기좋게 각 작업물을 모아서 만든 포트폴리오 사이트입니다.',
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
@@ -229,7 +229,9 @@ const ProjectsMake = styled.div`
   font-weight: 700;
 `;
 
-const ProjectIntro = styled.div``;
+const ProjectIntro = styled.div`
+  margin-top: 10px;
+`;
 
 const Line = styled.div`
   margin: 10px 0;
