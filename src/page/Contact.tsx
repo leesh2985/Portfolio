@@ -35,27 +35,68 @@ const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 155px 50px;
+  padding: 155px 0px;
+
+  @media (max-width: 1024px) {
+    padding: 90px 0px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    width: 80%;
+    padding: 50px 0px;
+  }
 `;
 
 const ContactDiv = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 `;
 
 const ContactText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 30px;
+
+  @media (max-width: 1024px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 15px;
+  }
 `;
 
 const FirstSpan = styled.span`
   font-size: 40px;
   font-weight: bold;
+
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
 `;
 
 const Contacts = styled.div`
   display: flex;
-  margin-left: 100px;
+  margin-top: 50px;
 `;
 
 const IconStyle = css`
@@ -67,12 +108,6 @@ const IconStyle = css`
 const GitHub = styled.a`
   ${IconStyle}
 `;
-
-// const Phone = styled.div`
-//   color: #242424;
-//   font-size: 40px;
-//   margin-right: 20px;
-// `;
 
 const Email = styled.a`
   ${IconStyle}

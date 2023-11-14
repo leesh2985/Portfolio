@@ -5,7 +5,7 @@ import { LuSchool } from 'react-icons/lu';
 import { HiOutlineMail } from 'react-icons/hi';
 import { GrDocumentPdf } from 'react-icons/gr';
 import { FiSmartphone } from 'react-icons/fi';
-import { RxGithubLogo } from 'react-icons/rx';
+import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
 
 export default function About() {
   return (
@@ -70,10 +70,13 @@ export default function About() {
             </IntroContent>
           </IntroSection>
           <IntroSection>
-            <IntroTitle>GitHub</IntroTitle>
+            <IntroTitle>Channels</IntroTitle>
             <IntroContent>
               <GitHub href="https://github.com/leesh2985">
                 <RxGithubLogo />
+              </GitHub>
+              <GitHub href="https://www.notion.so/121a52b5c5c94eb8a30df0c5d44a6633">
+                <RxNotionLogo />
               </GitHub>
             </IntroContent>
           </IntroSection>
