@@ -50,9 +50,6 @@ const Skill = forwardRef<HTMLDivElement>((_props, ref) => {
             <SkillListTitle>BackEnd</SkillListTitle>
             <SkillList>
               <SkillItem>
-                <Img src="/img/node.png" alt="node" />
-              </SkillItem>
-              <SkillItem>
                 <Img src="/img/firebase.png" alt="firebase" />
               </SkillItem>
             </SkillList>
