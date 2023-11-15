@@ -10,6 +10,7 @@ interface Project {
   vercelLink: string;
   session: string;
   type: string;
+  Participation: string;
   intro: string;
   skills: string[];
 }
@@ -22,6 +23,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://triptalk.vercel.app/',
     session: '23/09/05~23/11/10',
     type: '팀프로젝트(6인)',
+    Participation: '60',
     intro:
       'Triptalk은 국내 여행의 추억과 경험을 공유하는 커뮤니티로, 프론트엔드 3명과 백엔드 3명이 협업하여 빠른 개발 서버를 위해 Vite를 활용한 프로젝트입니다.  UI부분을 주도적으로 작업했으며 리뷰맵 내정보 개인정보수정페이지등을 작업을 맡았으며 반응형 디자인을 통해 다양한 디바이스에서의 사용을 고려하여 작업을 진행 했으며 이해가 어려운 부분이 발생하면 신속히 대화를 통해 의견을 공유해서 해결했습니다.',
     skills: [
@@ -40,6 +42,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://hdrc.vercel.app/',
     session: '23/07/03~23/08/10',
     type: '개인프로젝트',
+    Participation: '60',
     intro: `HERC 러닝 커뮤니티는 단체로 뛰기를 꺼리는 러닝 열정을 가진 개인들을 위한 플랫폼입니다. 여기에서 러너들은 간편하게 러닝에 관한 정보를 얻고 서로 소통할 수 있는 커뮤니티를 형성합니다. 이 프로젝트는 Vite를 활용하여 빠른 개발 서버와 최적화를 위한 빌드 시간을 확보하였으며, 데이터베이스로는 파이어베이스를 효율적으로 활용하여 작업되었습니다.`,
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
@@ -58,6 +61,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://to-do-taupe.vercel.app/',
     session: '23/08/24~23/08/25',
     type: '개인프로젝트',
+    Participation: '60',
     intro:
       'To-Do List 프로젝트는 수정 및 삭제 기능을 갖추고 있어 사용자가 편리하게 작업을 관리할 수 있습니다. 더불어, 간편한 완료 기능을 통해 오늘의 완료된 작업을 표시하는 기능을 제공합니다. 이 프로젝트는 HTML, CSS, JavaScript를 사용하여 구현되었으며, JS를 활용하여 명언이 새로 고침될 때마다 변경되게 했습니다.',
     skills: [
@@ -73,6 +77,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://lsh-one.vercel.app/',
     session: '23/11/13~23/11/20',
     type: '개인프로젝트',
+    Participation: '60',
     intro:
       '한눈에 보기 좋은 포트폴리오 웹사이트로, 각 작업물을 효과적으로 모아놓은 플랫폼입니다. Vite를 사용하여 개발되었으며, 가독성을 중점으로 하여 반응형 디자인을 구현하였습니다. ',
     skills: [
@@ -114,7 +119,10 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
               </Top>
             </Left>
             <Right>
-              <ProjectsMake>{project.type}</ProjectsMake>
+              <TypeDiv>
+                <ProjectsMake>{project.type}</ProjectsMake>
+                <ProjectParticipation>내 참여 비율: {project.Participation}%</ProjectParticipation>
+              </TypeDiv>
               <ProjectIntro>{project.intro}</ProjectIntro>
               <Line></Line>
               <MainSkill>
@@ -226,9 +234,42 @@ const ProjectsImg = styled.img`
   border-radius: 15px;
 `;
 
+const TypeDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 705px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+`;
+
 const ProjectsMake = styled.div`
   font-size: 25px;
   font-weight: 700;
+
+  @media (max-width: 855px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 25px;
+  }
+`;
+
+const ProjectParticipation = styled.div`
+  font-size: 20px;
+
+  @media (max-width: 855px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
 `;
 
 const ProjectIntro = styled.div`

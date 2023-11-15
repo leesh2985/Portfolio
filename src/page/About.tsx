@@ -19,7 +19,12 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
               <PersonIcon />: 이승현
             </InfoText>
             <InfoText>
-              <DocumenIcon />: 다운
+              <DocumenIcon />:{' '}
+              <PdfLink
+                href="https://drive.google.com/file/d/1tQigTBMJYdqFIaMiJaZ047xHn7-1WW65/view?usp=drive_link"
+                download>
+                이력서
+              </PdfLink>
             </InfoText>
           </InfoDiv>
           <InfoText>
@@ -191,6 +196,11 @@ const InfoDiv = styled.div`
 const InfoText = styled.div`
   font-size: 20px;
   margin-bottom: 5px;
+`;
+
+const PdfLink = styled.a`
+  color: #242424;
+  text-decoration: underline;
 `;
 
 const IntroduceContainer = styled.div`
