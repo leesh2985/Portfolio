@@ -13,7 +13,7 @@ const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
             앞으로도 높은 수준의 웹 개발을 하고싶습니다.
           </FirstSpan>
           <br />
-          열심히 작업한 포트폴리오를 끝까지 살펴봐주셔서 감사합니다!
+          포트폴리오를 끝까지 살펴봐주셔서 감사합니다!
         </ContactText>
         <Contacts>
           <GitHub href="https://github.com/leesh2985">
