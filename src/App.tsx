@@ -1,18 +1,29 @@
+import styled from 'styled-components';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Container from './page/Container';
-import MainLayout from './components/MainLayout';
+import About from './page/About';
+import Contact from './page/Contact';
+import Projects from './page/Projects';
+import Skill from './page/Skill';
+import Header from './components/Header';
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Container />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Header />
+      <MainContainer>
+        <About />
+        <Skill />
+        <Projects />
+        <Contact />
+      </MainContainer>
+    </>
   );
 }
 
-export default App;
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // height: 330vh;
+`;
