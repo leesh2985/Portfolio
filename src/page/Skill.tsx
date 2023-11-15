@@ -1,8 +1,9 @@
+import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 
-export default function Skill() {
+const Skill = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <SkillContainer>
+    <SkillContainer ref={ref}>
       <SkillTitle>My Skills</SkillTitle>
       <List>
         <FeSkill>
@@ -84,7 +85,7 @@ export default function Skill() {
       </List>
     </SkillContainer>
   );
-}
+});
 
 const SkillContainer = styled.div`
   width: 80%;
@@ -187,3 +188,5 @@ const BNE = styled.div`
   flex-direction: column;
   width: 100%;
 `;
+
+export default Skill;

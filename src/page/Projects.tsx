@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { RxGithubLogo, RxNotionLogo, RxVercelLogo } from 'react-icons/rx';
 import { BiTimeFive } from 'react-icons/bi';
+import { forwardRef } from 'react';
 
 interface Project {
   imageSrc: string;
@@ -83,9 +84,9 @@ const projectsData: Project[] = [
   },
 ];
 
-export default function Projects() {
+const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer ref={ref}>
       <ProjectsTitle>Projects</ProjectsTitle>
       <ProjectsList>
         {projectsData.map((project, index) => (
@@ -128,7 +129,7 @@ export default function Projects() {
       </ProjectsList>
     </ProjectsContainer>
   );
-}
+});
 
 const ProjectsContainer = styled.div`
   width: 80%;
@@ -307,3 +308,5 @@ const Vercel = styled.a`
   ${LinkStyle}
   margin-right: 0px;
 `;
+
+export default Projects;

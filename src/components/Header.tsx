@@ -1,28 +1,32 @@
+import { Ref, forwardRef } from 'react';
 import styled from 'styled-components';
 
-export default function Header() {
+interface HeaderProps {
+  onButtonClick: (section: string) => void;
+}
+
+const Header = forwardRef(({ onButtonClick }: HeaderProps, ref: Ref<HTMLDivElement>) => {
+  const handleButtonClick = (section: string) => {
+    onButtonClick(section);
+  };
+
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={ref}>
       <LogoContainer>
-        <Logo>LSH</Logo>
+        <Logo onClick={() => handleButtonClick('about')}>LSH</Logo>
       </LogoContainer>
       <Nav>
-        <NavItem>
-          <NavLink href="/about">About me</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/skills">Skills</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/projects">Projects</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/contact">Contact</NavLink>
-        </NavItem>
+        {['about', 'skills', 'projects', 'contact'].map(section => (
+          <NavItem key={section}>
+            <NavBtn onClick={() => handleButtonClick(section)}>
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </NavBtn>
+          </NavItem>
+        ))}
       </Nav>
     </HeaderContainer>
   );
-}
+});
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -46,7 +50,10 @@ const HeaderContainer = styled.div`
 
 const LogoContainer = styled.div``;
 
-const Logo = styled.div`
+const Logo = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
   font-size: 30px;
   font-weight: 700;
 
@@ -78,12 +85,13 @@ const NavItem = styled.li`
   }
 `;
 
-const NavLink = styled.a`
+const NavBtn = styled.button`
   text-decoration: none;
   color: #242424;
-  font-weight: bold;
-
-  &:hover {
-    text-decoration: none;
-  }
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
 `;
+
+export default Header;

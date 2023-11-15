@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import { AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 import styled, { css } from 'styled-components';
 
-export default function Contact() {
+const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <ContactContainer>
+    <ContactContainer ref={ref}>
       <ContactDiv>
         <ContactText>
           <FirstSpan>
@@ -28,7 +29,7 @@ export default function Contact() {
       </ContactDiv>
     </ContactContainer>
   );
-}
+});
 
 const ContactContainer = styled.div`
   width: 80%;
@@ -112,3 +113,4 @@ const GitHub = styled.a`
 const Email = styled.a`
   ${IconStyle}
 `;
+export default Contact;

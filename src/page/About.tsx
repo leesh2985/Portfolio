@@ -6,10 +6,11 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { GrDocumentPdf } from 'react-icons/gr';
 import { FiSmartphone } from 'react-icons/fi';
 import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
+import { forwardRef } from 'react';
 
-export default function About() {
+const About = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <AboutContainer>
+    <AboutContainer ref={ref}>
       <InfoContainer>
         <MyImg src="/img/me.jpg" alt="증명사진" />
         <Info>
@@ -84,7 +85,7 @@ export default function About() {
       </IntroduceContainer>
     </AboutContainer>
   );
-}
+});
 
 const AboutContainer = styled.div`
   width: 80%;
@@ -246,3 +247,5 @@ const GitHub = styled.a`
   font-size: 40px;
   margin-right: 20px;
 `;
+
+export default About;
