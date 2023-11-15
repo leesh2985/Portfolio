@@ -75,7 +75,7 @@ const projectsData: Project[] = [
     githubLink: 'https://github.com/leesh2985/Portfolio',
     notionLink: 'https://www.notion.so/839b0c75a38d4b9ea51b9e25ac10486d',
     vercelLink: 'https://lsh-one.vercel.app/',
-    session: '23/11/13~23/11/17',
+    session: '23/11/13~23/11/16',
     type: '개인프로젝트',
     Participation: '100',
     intro:

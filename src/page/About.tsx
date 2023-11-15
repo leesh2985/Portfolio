@@ -19,7 +19,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
               <PersonIcon />: 이승현
             </InfoText>
             <InfoText>
-              <DocumenIcon />:{' '}
+              <DocumenIcon />:
               <PdfLink
                 href="https://drive.google.com/file/d/1IO9UsSyC-jDZc1vuDGtkykVGICw05hGU/view?usp=drive_link"
                 download>
