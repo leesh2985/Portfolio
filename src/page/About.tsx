@@ -168,6 +168,7 @@ const MyImg = styled.img`
 
   @media (max-width: 425px) {
     margin-right: 0px;
+    height: 365px;
   }
 `;
 
