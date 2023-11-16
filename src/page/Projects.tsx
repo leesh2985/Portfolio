@@ -57,7 +57,7 @@ const projectsData: Project[] = [
   {
     imageSrc: '/img/todo.png',
     githubLink: 'https://github.com/leesh2985/Portfolio01',
-    notionLink: 'https://www.notion.so/TO-DO-99ff31d07f7c47968cac3c38c3e1c9bd',
+    notionLink: 'https://antique-koala-cd8.notion.site/TO-DO-99ff31d07f7c47968cac3c38c3e1c9bd?pvs=4',
     vercelLink: 'https://to-do-taupe.vercel.app/',
     session: '23/08/24~23/08/25',
     type: '개인프로젝트',
@@ -73,7 +73,7 @@ const projectsData: Project[] = [
   {
     imageSrc: '/img/main.png',
     githubLink: 'https://github.com/leesh2985/Portfolio',
-    notionLink: 'https://www.notion.so/839b0c75a38d4b9ea51b9e25ac10486d',
+    notionLink: 'https://antique-koala-cd8.notion.site/839b0c75a38d4b9ea51b9e25ac10486d?pvs=4',
     vercelLink: 'https://lsh-one.vercel.app/',
     session: '23/11/13~',
     type: '개인프로젝트',

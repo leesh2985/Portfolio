@@ -82,7 +82,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
               <GitHub href="https://github.com/leesh2985">
                 <RxGithubLogo />
               </GitHub>
-              <GitHub href="https://www.notion.so/121a52b5c5c94eb8a30df0c5d44a6633">
+              <GitHub href="https://antique-koala-cd8.notion.site/121a52b5c5c94eb8a30df0c5d44a6633?pvs=4">
                 <RxNotionLogo />
               </GitHub>
             </IntroContent>
