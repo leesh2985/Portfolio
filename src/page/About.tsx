@@ -6,9 +6,59 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { GrDocumentPdf } from 'react-icons/gr';
 import { FiSmartphone } from 'react-icons/fi';
 import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 
 const About = forwardRef<HTMLDivElement>((_props, ref) => {
+  const txt1 = '즐기고';
+  const txt2 = '도전하고';
+  const txt3 = '고민하는';
+
+  const [Text1, setText1] = useState('');
+  const [Text2, setText2] = useState('');
+  const [Text3, setText3] = useState('');
+  const [Count1, setCount1] = useState(0);
+  const [Count2, setCount2] = useState(0);
+  const [Count3, setCount3] = useState(0);
+
+  useEffect(() => {
+    const interval1 = setInterval(() => {
+      setText1(prevText => prevText + txt1[Count1]);
+      setCount1(Count1 + 1);
+    }, 300);
+
+    if (Count1 === txt1.length) {
+      clearInterval(interval1);
+    }
+
+    return () => clearInterval(interval1);
+  }, [Count1, Text1, txt1.length]);
+
+  useEffect(() => {
+    const interval2 = setInterval(() => {
+      setText2(prevText => prevText + txt2[Count2]);
+      setCount2(Count2 + 1);
+    }, 300);
+
+    if (Count2 === txt2.length) {
+      clearInterval(interval2);
+    }
+
+    return () => clearInterval(interval2);
+  }, [Count2, Text2, txt2.length]);
+
+  useEffect(() => {
+    const interval3 = setInterval(() => {
+      setText3(prevText => prevText + txt3[Count3]);
+      setCount3(Count3 + 1);
+    }, 300);
+
+    if (Count3 === txt3.length) {
+      clearInterval(interval3);
+    }
+
+    return () => clearInterval(interval3);
+  }, [Count3, Text3, txt3.length]);
+
   return (
     <AboutContainer ref={ref}>
       <InfoContainer>
@@ -43,9 +93,8 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
       </InfoContainer>
       <IntroduceContainer>
         <PointTitle>
-          문제 해결을 즐기고 새로운 기술에 도전하는
-          <br />
-          신입 개발자 이승현입니다.
+          문제 해결을 <PointSpan>{Text1}</PointSpan> 새로운 기술에 <PointSpan>{Text2}</PointSpan> 더 나은 사용자 경험을{' '}
+          <PointSpan>{Text3}</PointSpan> 신입 개발자 이승현입니다.
         </PointTitle>
         <TextContainer>
           <IntroSection>
@@ -100,7 +149,7 @@ const AboutContainer = styled.div`
   justify-content: center;
   padding: 50px;
   margin-top: 50px;
-  border-bottom: 2px dashed #ceb8b8;
+  border-bottom: 2px dashed #ffecb3;
 
   @media (max-width: 1024px) {
     display: flex;
@@ -216,12 +265,48 @@ const IntroduceContainer = styled.div`
 `;
 
 const PointTitle = styled.div`
-  font-weight: 700;
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 20px;
+
+  @media (max-width: 1440px) {
+    font-size: 27px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 31px;
+  }
 
   @media (max-width: 425px) {
     font-size: 25px;
+  }
+`;
+
+const PointSpan = styled.span`
+  font-weight: bold;
+  font-size: 43px;
+  background: linear-gradient(to right, #ffeb3b, #ffd54f);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  @media (max-width: 1440px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 34px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 30px;
   }
 `;
 
