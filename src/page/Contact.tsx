@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import { AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 import styled, { css } from 'styled-components';
+import Typewriter from 'typewriter-effect';
 
 const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
@@ -13,7 +14,13 @@ const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
             앞으로도 높은 수준의 웹 개발을 하고싶습니다.
           </FirstSpan>
           <br />
-          포트폴리오를 끝까지 살펴봐주셔서 감사합니다!
+          <Typewriter
+            options={{
+              strings: ['포트폴리오를 끝까지 살펴봐주셔서 감사합니다!'],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </ContactText>
         <Contacts>
           <GitHub href="https://github.com/leesh2985">
