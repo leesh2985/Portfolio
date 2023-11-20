@@ -145,7 +145,7 @@ const ProjectsContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 50px;
-  border-bottom: 2px dashed #ceb8b8;
+  border-bottom: 2px dashed #ffecb3;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -153,7 +153,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const ProjectsTitle = styled.h2`
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 `;
 
