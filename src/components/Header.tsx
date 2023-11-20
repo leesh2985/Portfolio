@@ -44,7 +44,7 @@ const HeaderContainer = styled.div`
   }
 
   @media (max-width: 425px) {
-    padding: 0px 20px;
+    justify-content: center;
   }
 `;
 
@@ -58,14 +58,16 @@ const Logo = styled.button`
   font-weight: 700;
 
   @media (max-width: 425px) {
-    font-size: 25px;
-    margin-right: 30px;
+    display: none;
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
   padding: 10px 0;
+
+  @media (max-width: 425px) {
+  }
 `;
 
 const NavItem = styled.li`
