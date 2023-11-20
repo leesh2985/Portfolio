@@ -1,4 +1,4 @@
-import { Ref, forwardRef } from 'react';
+import { Ref, forwardRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface HeaderProps {
@@ -6,8 +6,11 @@ interface HeaderProps {
 }
 
 const Header = forwardRef(({ onButtonClick }: HeaderProps, ref: Ref<HTMLDivElement>) => {
+  const [activeSection, setActiveSection] = useState('about');
+
   const handleButtonClick = (section: string) => {
     onButtonClick(section);
+    setActiveSection(section);
   };
 
   return (
@@ -18,7 +21,7 @@ const Header = forwardRef(({ onButtonClick }: HeaderProps, ref: Ref<HTMLDivEleme
       <Nav>
         {['about', 'skills', 'projects', 'contact'].map(section => (
           <NavItem key={section}>
-            <NavBtn onClick={() => handleButtonClick(section)}>
+            <NavBtn onClick={() => handleButtonClick(section)} className={activeSection === section ? 'active' : ''}>
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </NavBtn>
           </NavItem>
@@ -94,6 +97,29 @@ const NavBtn = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+  position: relative;
+
+  &:hover,
+  &.active {
+    color: #fdd835;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fdd835;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+
+  &.active::after {
+    width: 100%;
+  }
 `;
 
 export default Header;
