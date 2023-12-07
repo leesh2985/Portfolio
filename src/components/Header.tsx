@@ -41,6 +41,7 @@ const HeaderContainer = styled.div`
   backdrop-filter: blur(6px);
   box-shadow: none;
   position: fixed;
+  z-index: 9999;
 
   @media (max-width: 1024px) {
     padding: 0px 20px;

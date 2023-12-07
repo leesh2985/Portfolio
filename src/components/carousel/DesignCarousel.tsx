@@ -1,8 +1,7 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import Slider from 'react-slick';
 import styled from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { useState } from 'react';
 import DesignPopup from '../../page/DesignPopup';
 
@@ -10,37 +9,57 @@ interface imgData {
   imgDatas: string[];
 }
 
-const imgDatas: imgData = {
-  imgDatas: [
-    '/img/designimg/22.12.08.jpg',
-    '/img/designimg/22.11.28.jpg',
-    '/img/designimg/22.10.18.jpg',
-    '/img/designimg/22.09.26.jpg',
-    '/img/designimg/22.08.30.jpg',
-    '/img/designimg/22.08.05_2.jpg',
-    '/img/designimg/22.08.05_1.jpg',
-    '/img/designimg/22.07.05.jpg',
-    '/img/designimg/22.05.31.jpg',
-    '/img/designimg/22.05.03.jpg',
-    '/img/designimg/22.04.27.jpg',
-    '/img/designimg/22.04.25.jpg',
-    '/img/designimg/22.04.06.jpg',
-    '/img/designimg/22.03.29.jpg',
-    '/img/designimg/22.03.18_3.jpg',
-    '/img/designimg/22.03.18_2.jpg',
-    '/img/designimg/22.03.18_1.jpg',
-    '/img/designimg/22.02.24.jpg',
-    '/img/designimg/22.02.08.jpg',
-    '/img/designimg/21.12.13.jpg',
-    '/img/designimg/21.12.03.jpg',
-    '/img/designimg/21.07.31.jpg',
-    '/img/designimg/21.07.07.jpg',
-    '/img/designimg/21.07.02_2.jpg',
-    '/img/designimg/21.07.02_1.jpg',
-  ],
-};
+const DesignCarousel = () => {
+  const imgDatas: imgData = {
+    imgDatas: [
+      '/img/designimg/22.12.08.jpg',
+      '/img/designimg/22.11.28.jpg',
+      '/img/designimg/22.10.18.jpg',
+      '/img/designimg/22.09.26.jpg',
+      '/img/designimg/22.08.30.jpg',
+      '/img/designimg/22.08.05_2.jpg',
+      '/img/designimg/22.08.05_1.jpg',
+      '/img/designimg/22.07.05.jpg',
+      '/img/designimg/22.05.31.jpg',
+      '/img/designimg/22.05.03.jpg',
+      '/img/designimg/22.04.27.jpg',
+      '/img/designimg/22.04.25.jpg',
+      '/img/designimg/22.04.06.jpg',
+      '/img/designimg/22.03.29.jpg',
+      '/img/designimg/22.03.18_3.jpg',
+      '/img/designimg/22.03.18_2.jpg',
+      '/img/designimg/22.03.18_1.jpg',
+      '/img/designimg/22.02.24.jpg',
+      '/img/designimg/22.02.08.jpg',
+      '/img/designimg/21.12.13.jpg',
+      '/img/designimg/21.12.03.jpg',
+      '/img/designimg/21.07.31.jpg',
+      '/img/designimg/21.07.07.jpg',
+      '/img/designimg/21.07.02_2.jpg',
+      '/img/designimg/21.07.02_1.jpg',
+    ],
+  };
 
-export default function DesignCarousel() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState<imgData | null>(null);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
@@ -58,50 +77,60 @@ export default function DesignCarousel() {
   }
 
   return (
-    <>
-      <SwiperWarp
-        loop={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        slidesPerView={4}
-        spaceBetween={20}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Navigation, Pagination]}
-        className="mySwiper">
+    <Container>
+      <Sliders {...settings}>
         {imgDatas.imgDatas.map((src, index) => (
-          <SwiperSlideImg key={index} onClick={() => openPopup(imgDatas, index)}>
-            <SlideDiv>
-              <SlideImg src={src} alt={`이미지`} />
-            </SlideDiv>
-          </SwiperSlideImg>
+          <SlideDiv key={index} onClick={() => openPopup(imgDatas, index)}>
+            <SlideImg src={src} alt={`이미지`} />
+          </SlideDiv>
         ))}
-      </SwiperWarp>
+      </Sliders>
 
       {isPopupOpen && popupData && popupIndex !== null && (
         <DesignPopup data={popupData} onClose={closePopup} selectedIndex={popupIndex} />
       )}
-    </>
+    </Container>
   );
-}
+};
 
-const SwiperWarp = styled(Swiper)`
+export default DesignCarousel;
+
+const Container = styled.div`
   margin-top: 40px;
   width: 100%;
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: #fdd835;
-  }
+  height: 100%;
 `;
-const SwiperSlideImg = styled(SwiperSlide)``;
+
 const SlideDiv = styled.div`
-  width: 340px;
+  width: 460px !important;
   height: 400px;
   border-radius: 15px;
   border: 1px solid #c9c9c9;
+
+  @media (max-width: 1440px) {
+    width: 330px !important;
+  }
+
+  @media (max-width: 1024px) {
+    width: 300px !important;
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 215px !important;
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 215px !important;
+    height: 300px;
+  }
+  @media (max-width: 425px) {
+    width: 105px !important;
+    height: 300px;
+  }
 `;
+
 const SlideImg = styled.img`
   width: 100%;
   height: 100%;
@@ -109,4 +138,15 @@ const SlideImg = styled.img`
   object-position: top;
   border-radius: 15px;
   cursor: pointer;
+`;
+
+const Sliders = styled(Slider)`
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 40px;
+    color: #fdd835;
+  }
+  .slick-prev {
+    left: -46px;
+  }
 `;
