@@ -52,12 +52,6 @@ const DesignCarousel = () => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 2560,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
         breakpoint: 1440,
         settings: {
           slidesToShow: 3,
