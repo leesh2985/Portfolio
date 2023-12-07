@@ -6,11 +6,13 @@ import Projects from './page/Projects';
 import Skill from './page/Skill';
 import Header from './components/Header';
 import { useRef } from 'react';
+import Design from './page/Design';
 
 export default function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
-  const skillsRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
+  const designRef = useRef<HTMLDivElement | null>(null);
+  const skillsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
@@ -25,11 +27,14 @@ export default function App() {
       case 'about':
         scrollToSection(aboutRef);
         break;
-      case 'skills':
-        scrollToSection(skillsRef);
-        break;
       case 'projects':
         scrollToSection(projectsRef);
+        break;
+      case 'design':
+        scrollToSection(designRef);
+        break;
+      case 'skills':
+        scrollToSection(skillsRef);
         break;
       case 'contact':
         scrollToSection(contactRef);
@@ -44,8 +49,9 @@ export default function App() {
       <Header onButtonClick={handleButtonClick} />
       <MainContainer>
         <About ref={aboutRef} />
-        <Skill ref={skillsRef} />
         <Projects ref={projectsRef} />
+        <Design ref={designRef} />
+        <Skill ref={skillsRef} />
         <Contact ref={contactRef} />
       </MainContainer>
     </>

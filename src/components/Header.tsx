@@ -19,7 +19,7 @@ const Header = forwardRef(({ onButtonClick }: HeaderProps, ref: Ref<HTMLDivEleme
         <Logo onClick={() => handleButtonClick('about')}>LSH</Logo>
       </LogoContainer>
       <Nav>
-        {['about', 'skills', 'projects', 'contact'].map(section => (
+        {['about', 'projects', 'design', 'skills', 'contact'].map(section => (
           <NavItem key={section}>
             <NavBtn onClick={() => handleButtonClick(section)} className={activeSection === section ? 'active' : ''}>
               {section.charAt(0).toUpperCase() + section.slice(1)}
