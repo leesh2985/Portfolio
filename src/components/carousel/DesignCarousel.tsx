@@ -44,7 +44,7 @@ const DesignCarousel = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
@@ -52,9 +52,27 @@ const DesignCarousel = () => {
     arrows: true,
     responsive: [
       {
+        breakpoint: 2560,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],
@@ -102,7 +120,7 @@ const Container = styled.div`
 `;
 
 const SlideDiv = styled.div`
-  width: 460px !important;
+  width: 350px !important;
   height: 400px;
   border-radius: 15px;
   border: 1px solid #c9c9c9;
@@ -125,8 +143,14 @@ const SlideDiv = styled.div`
     width: 215px !important;
     height: 300px;
   }
+
   @media (max-width: 425px) {
-    width: 105px !important;
+    width: 320px !important;
+    height: 300px;
+  }
+
+  @media (max-width: 375px) {
+    width: 275px !important;
     height: 300px;
   }
 `;
