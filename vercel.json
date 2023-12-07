@@ -5,12 +5,12 @@
       "dest": "/about.html"
     },
     {
-      "src": "/skills",
-      "dest": "/skills.html"
-    },
-    {
       "src": "/projects",
       "dest": "/projects.html"
+    },
+    {
+      "src": "/skills",
+      "dest": "/skills.html"
     },
     {
       "src": "/contact",
