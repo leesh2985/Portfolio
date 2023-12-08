@@ -26,7 +26,6 @@ const DesignCarousel = () => {
       '/img/designimg/22.04.25.jpg',
       '/img/designimg/22.04.06.jpg',
       '/img/designimg/22.03.29.jpg',
-      '/img/designimg/22.03.18_3.jpg',
       '/img/designimg/22.03.18_2.jpg',
       '/img/designimg/22.03.18_1.jpg',
       '/img/designimg/22.02.24.jpg',
@@ -41,14 +40,14 @@ const DesignCarousel = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     arrows: true,
     responsive: [
       {
