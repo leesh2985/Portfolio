@@ -27,7 +27,7 @@ const DesignCarousel = () => {
       '/img/designimg/22.04.06.jpg',
       '/img/designimg/22.03.29.jpg',
       '/img/designimg/22.03.18_2.jpg',
-      '/img/designimg/22.03.18_1.jpg',
+
       '/img/designimg/22.02.24.jpg',
       '/img/designimg/22.02.08.jpg',
       '/img/designimg/21.12.13.jpg',
