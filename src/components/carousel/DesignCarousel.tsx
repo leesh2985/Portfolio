@@ -40,7 +40,7 @@ const DesignCarousel = () => {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -51,7 +51,31 @@ const DesignCarousel = () => {
     arrows: true,
     responsive: [
       {
+        breakpoint: 1525,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1485,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
         breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1116,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
         },
@@ -59,11 +83,29 @@ const DesignCarousel = () => {
       {
         breakpoint: 768,
         settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
           slidesToShow: 2,
         },
       },
       {
         breakpoint: 425,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 320,
         settings: {
           slidesToShow: 1,
         },
@@ -119,7 +161,11 @@ const SlideDiv = styled.div`
   border: 1px solid #c9c9c9;
 
   @media (max-width: 1440px) {
-    width: 330px !important;
+    width: 350px !important;
+  }
+
+  @media (max-width: 1116px) {
+    width: 100px !important;
   }
 
   @media (max-width: 1024px) {
@@ -132,18 +178,13 @@ const SlideDiv = styled.div`
     height: 300px;
   }
 
-  @media (max-width: 768px) {
-    width: 215px !important;
-    height: 300px;
-  }
-
   @media (max-width: 425px) {
-    width: 320px !important;
+    width: 275px !important;
     height: 300px;
   }
 
-  @media (max-width: 375px) {
-    width: 275px !important;
+  @media (max-width: 320px) {
+    width: 220px !important;
     height: 300px;
   }
 `;
