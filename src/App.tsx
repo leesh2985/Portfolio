@@ -5,7 +5,7 @@ import Contact from './page/Contact';
 import Projects from './page/Projects';
 import Skill from './page/Skill';
 import Header from './components/Header';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Design from './page/Design';
 
 export default function App() {
@@ -14,6 +14,7 @@ export default function App() {
   const designRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  const [activeSection, setActiveSection] = useState('about');
 
   const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
     if (sectionRef.current) {
@@ -44,9 +45,32 @@ export default function App() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (aboutRef.current && scrollPosition < aboutRef.current.offsetTop) {
+        setActiveSection('about');
+      } else if (projectsRef.current && scrollPosition < projectsRef.current.offsetTop) {
+        setActiveSection('projects');
+      } else if (designRef.current && scrollPosition < designRef.current.offsetTop) {
+        setActiveSection('design');
+      } else if (skillsRef.current && scrollPosition < skillsRef.current.offsetTop) {
+        setActiveSection('skills');
+      } else if (contactRef.current && scrollPosition < contactRef.current.offsetTop) {
+        setActiveSection('contact');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <Header onButtonClick={handleButtonClick} />
+      <Header onButtonClick={handleButtonClick} activeSection={activeSection} />
       <MainContainer>
         <About ref={aboutRef} />
         <Projects ref={projectsRef} />

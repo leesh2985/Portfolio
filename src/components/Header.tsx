@@ -1,16 +1,18 @@
-import { Ref, forwardRef, useState } from 'react';
+import { Ref, forwardRef } from 'react';
 import styled from 'styled-components';
 
 interface HeaderProps {
   onButtonClick: (section: string) => void;
+  activeSection: string;
 }
 
-const Header = forwardRef(({ onButtonClick }: HeaderProps, ref: Ref<HTMLDivElement>) => {
-  const [activeSection, setActiveSection] = useState('about');
+const Header = forwardRef(({ onButtonClick, activeSection }: HeaderProps, ref: Ref<HTMLDivElement>) => {
+  // const [activeSection, setActiveSection] = useState('about');
 
   const handleButtonClick = (section: string) => {
     onButtonClick(section);
-    setActiveSection(section);
+
+    // setActiveSection(section);
   };
 
   return (
