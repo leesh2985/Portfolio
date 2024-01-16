@@ -20,7 +20,7 @@ const projectsData: Project[] = [
     imageSrc: '/img/triptalk.png',
     githubLink: 'https://github.com/triptalk-4/triptalk-frontend',
     notionLink: 'https://www.notion.so/DEMO-DAY-TRIPTALK-0bd8366d33de4d7f85ea848a0f514bb0',
-    vercelLink: 'https://www.notion.so/DEMO-DAY-TRIPTALK-0bd8366d33de4d7f85ea848a0f514bb0',
+    vercelLink: 'https://triptalk.vercel.app/',
     session: '23/09/05~23/11/10',
     type: '팀프로젝트(6인)',
     Participation: '60',
