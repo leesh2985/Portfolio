@@ -23,7 +23,7 @@ const projectsData: Project[] = [
     vercelLink: 'https://triptalk.vercel.app/',
     session: '23/09/05~23/11/10',
     type: '팀프로젝트(6인)',
-    Participation: '60',
+    Participation: '30',
     intro:
       'Triptalk은 국내 여행의 추억과 경험을 공유하는 커뮤니티로, 프론트엔드 3명과 백엔드 3명이 협업하여 빠른 개발 서버를 위해 Vite를 활용한 프로젝트입니다.  UI부분을 주도적으로 작업했으며 리뷰맵 내정보 개인정보수정페이지등을 작업을 맡았으며 반응형 디자인을 통해 다양한 디바이스에서의 사용을 고려하여 작업을 진행 했으며 이해가 어려운 부분이 발생하면 신속히 대화를 통해 의견을 공유해서 해결했습니다.',
     skills: [
