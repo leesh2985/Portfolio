@@ -160,12 +160,17 @@ const SlideDiv = styled.div`
   border-radius: 15px;
   border: 1px solid #c9c9c9;
 
+  @media (max-width: 1536px) {
+    /* 노트북 화면 */
+    width: 275px !important;
+  }
+
   @media (max-width: 1440px) {
     width: 350px !important;
   }
 
   @media (max-width: 1116px) {
-    width: 100px !important;
+    width: 250px !important;
   }
 
   @media (max-width: 1024px) {
