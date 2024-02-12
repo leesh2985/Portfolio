@@ -3,7 +3,7 @@ import { BsPerson } from 'react-icons/bs';
 import { RiCakeLine } from 'react-icons/ri';
 import { LuSchool } from 'react-icons/lu';
 import { HiOutlineMail } from 'react-icons/hi';
-import { GrDocumentPdf } from 'react-icons/gr';
+// import { GrDocumentPdf } from 'react-icons/gr';
 import { FiSmartphone } from 'react-icons/fi';
 import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
 import { forwardRef } from 'react';
@@ -18,14 +18,14 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
             <InfoText>
               <PersonIcon />: 이승현
             </InfoText>
-            <InfoText>
+            {/* <InfoText>
               <DocumenIcon />:
               <PdfLink
                 href="https://drive.google.com/file/d/1xnWMhklwpeVqS9iKZq-R1Tw-qBEH9pWL/view?usp=drive_link"
                 download>
                 이력서
               </PdfLink>
-            </InfoText>
+            </InfoText> */}
           </InfoDiv>
           <InfoText>
             <CakeIcon />: 1997.12.13
@@ -138,7 +138,7 @@ const CakeIcon = styled(RiCakeLine)``;
 const SchoolIcon = styled(LuSchool)``;
 const EMailIcon = styled(HiOutlineMail)``;
 const PhoneIcon = styled(FiSmartphone)``;
-const DocumenIcon = styled(GrDocumentPdf)``;
+// const DocumenIcon = styled(GrDocumentPdf)``;
 
 const MyImg = styled.img`
   width: 100%;
@@ -197,10 +197,10 @@ const InfoText = styled.div`
   margin-bottom: 5px;
 `;
 
-const PdfLink = styled.a`
-  color: #242424;
-  text-decoration: underline;
-`;
+// const PdfLink = styled.a`
+//   color: #242424;
+//   text-decoration: underline;
+// `;
 
 const IntroduceContainer = styled.div`
   width: 80%;
