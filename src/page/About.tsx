@@ -21,7 +21,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
             <InfoText>
               <DocumenIcon />:
               <PdfLink
-                href="https://drive.google.com/file/d/1tDFr8M0s8KOKn2YhoJsvLViaicb5RxQm/view?usp=sharing"
+                href="https://drive.google.com/file/d/1xnWMhklwpeVqS9iKZq-R1Tw-qBEH9pWL/view?usp=drive_link"
                 download>
                 이력서
               </PdfLink>
