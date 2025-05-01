@@ -47,18 +47,24 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      const centerY = window.scrollY + window.innerHeight / 2;
 
-      if (aboutRef.current && scrollPosition < aboutRef.current.offsetTop) {
-        setActiveSection('about');
-      } else if (projectsRef.current && scrollPosition < projectsRef.current.offsetTop) {
-        setActiveSection('projects');
-      } else if (designRef.current && scrollPosition < designRef.current.offsetTop) {
-        setActiveSection('design');
-      } else if (skillsRef.current && scrollPosition < skillsRef.current.offsetTop) {
-        setActiveSection('skills');
-      } else if (contactRef.current && scrollPosition < contactRef.current.offsetTop) {
-        setActiveSection('contact');
+      const sections = [
+        { id: 'about', ref: aboutRef },
+        { id: 'projects', ref: projectsRef },
+        { id: 'design', ref: designRef },
+        { id: 'skills', ref: skillsRef },
+        { id: 'contact', ref: contactRef },
+      ];
+
+      for (let i = 0; i < sections.length; i++) {
+        const currentTop = sections[i].ref.current?.offsetTop ?? 0;
+        const nextTop = sections[i + 1]?.ref.current?.offsetTop ?? Infinity;
+
+        if (centerY >= currentTop && centerY < nextTop) {
+          setActiveSection(sections[i].id);
+          break;
+        }
       }
     };
 
