@@ -43,19 +43,22 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
       </InfoContainer>
       <IntroduceContainer>
         <PointTitle>
-          문제 해결을 <PointSpan>즐기고</PointSpan> 새로운 기술에 <PointSpan>도전하고</PointSpan> 더 나은 사용자 경험을{' '}
-          <PointSpan>고민하는</PointSpan> 신입 개발자 이승현입니다.
+          새로운 기술을 <PointSpan>탐색하고</PointSpan> 적용하는 것을 <PointSpan>즐기며</PointSpan>, 사용자 중심의 웹
+          화면을 <PointSpan>기획부터 구현까지</PointSpan> 직접 다뤄본 프론트엔드 개발자 이승현입니다.
         </PointTitle>
         <TextContainer>
           <IntroSection>
             <IntroTitle>Who Am I</IntroTitle>
             <IntroContent>
               <ol>
-                <li>1. 끈기와 밝은 성격으로 사용자에게 완성도 높은 웹을 만들려고합니다.</li>
-                <li>2. 새로운 기술을 배우며 성장하고, 협업을 중요시하며 함께 일하는 것을 즐깁니다.</li>
-                <li>3. 사용자에게 더 나은 인터페이스와 깔끔한 코드를 작성하고자 노력하는 개발자입니다.</li>
-                <li>4. 원활한 소통으로 퍼블리싱 및 프론트엔드 개발이 가능합니다.</li>
-                <li>5. 인터랙티브한 웹사이트에 관심이 많습니다.</li>
+                <li>1. 밝고 끈기 있는 태도로 사용자의 입장에서 완성도 높은 웹 화면을 구현합니다.</li>
+                <li>2. 새로운 기술을 익히고 실무에 적용하는 과정을 즐기며, 팀과의 협업도 중요하게 생각합니다.</li>
+                <li>3. 깔끔하고 유지보수하기 쉬운 코드, 그리고 직관적인 UI를 위해 끊임없이 개선해 나갑니다.</li>
+                <li>4. 디자이너 없이도 요구사항을 분석해 퍼블리싱과 프론트엔드 개발을 모두 수행할 수 있습니다.</li>
+                <li>
+                  5. 데이터 시각화, 사용자 인터랙션, 애니메이션 등 인터랙티브한 웹에 높은 관심을 가지고 직접 구현해본
+                  경험이 있습니다.
+                </li>
               </ol>
             </IntroContent>
           </IntroSection>
@@ -67,8 +70,27 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
             <IntroTitle>Career</IntroTitle>
             <IntroContent>
               <ol>
-                <li>2023.03 - 2023.11 : 제로베이스 (프론트엔드 취업 스쿨)</li>
-                <li>2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)</li>
+                <li>
+                  2024.02 - 현재 : ㈜에코씨앤에이 (프론트엔드 개발자)
+                  <br />
+                  <SubText>
+                    환경 플랫폼 ‘YPSILON’의 UI/UX 기획, 화면 설계 및 기능 구현
+                    <br />
+                    사용자 메뉴얼 제작 및 프론트엔드 유지보수 대응 경험
+                  </SubText>
+                </li>
+                <li>
+                  2023.03 - 2023.11 : 제로베이스 (프론트엔드 취업 스쿨 수료)
+                  <br />
+                  <SubText>React, JavaScript, Git, REST API 등 실습 프로젝트 수행</SubText>
+                </li>
+                <li>
+                  2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)
+                  <br />
+                  <SubText>
+                    건강, 주거, 스포츠 등 다양한 분야의 상세 페이지를 기획부터 디자인까지 수행하며 25건 이상 업무 수행
+                  </SubText>
+                </li>
                 <li>2016.03 - 2021.08 : 동명대학교 졸업 (시각디자인학과)</li>
               </ol>
             </IntroContent>
@@ -89,6 +111,14 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
     </AboutContainer>
   );
 });
+
+const SubText = styled.span`
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.5;
+`;
 
 const AboutContainer = styled.div`
   width: 80%;

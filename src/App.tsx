@@ -87,5 +87,4 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // height: 330vh;
 `;
