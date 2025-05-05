@@ -1,5 +1,6 @@
 import { RxGithubLogo, RxNotionLogo, RxVercelLogo } from 'react-icons/rx';
 import { BiTimeFive } from 'react-icons/bi';
+import { FaFigma } from 'react-icons/fa';
 import { forwardRef } from 'react';
 import {
   Container,
@@ -22,6 +23,7 @@ interface Project {
   githubLink: string;
   notionLink: string;
   vercelLink: string;
+  figmaLink?: string;
   session: string;
   type: string;
   Participation: string;
@@ -35,6 +37,8 @@ const projectsData: Project[] = [
     githubLink: 'https://github.com/triptalk-4/triptalk-frontend',
     notionLink: 'https://www.notion.so/DEMO-DAY-TRIPTALK-0bd8366d33de4d7f85ea848a0f514bb0',
     vercelLink: 'https://triptalk.vercel.app/',
+    figmaLink:
+      'https://www.figma.com/design/rvFyig30B4rWEN84fA8zKD/%EC%82%AC%EC%A1%B0%EC%82%AC%EC%A1%B0?node-id=0-1&m=dev&t=Xds7swMdzSlTZdPH-1',
     session: '23/09/05~23/11/10',
     type: '팀프로젝트(6인)',
     Participation: '30',
@@ -54,6 +58,7 @@ const projectsData: Project[] = [
     githubLink: 'https://github.com/leesh2985/Portfolio00',
     notionLink: 'https://antique-koala-cd8.notion.site/43222cd36db74bb09c213a87995d7602?pvs=4',
     vercelLink: 'https://hdrc.vercel.app/',
+    figmaLink: 'https://www.figma.com/design/3xjzyOkMeXZn8oMBEElXCd/HDRC?node-id=0-1&m=dev&t=1MQdGDiUPhcpEArj-1',
     session: '23/07/03~23/08/10',
     type: '개인프로젝트',
     Participation: '100',
@@ -108,11 +113,11 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
         Projects
       </Heading>
 
-      <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6} mt="40px">
+      <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={{ base: 4, md: 6, lg: 8 }} mt="40px">
         {projectsData.map((project, index) => (
           <GridItem key={index}>
             <Card>
-              <CardBody>
+              <CardBody p={{ base: 4, md: 6 }}>
                 {/* Left Section */}
                 <Flex direction="column">
                   <Image
@@ -121,9 +126,11 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
                     borderRadius="lg"
                     border="1px solid"
                     borderColor="gray.200"
+                    maxH={{ base: '200px', md: '250px', lg: '300px' }}
+                    objectFit="cover"
                   />
 
-                  <Flex mt="20px" justify="space-between" align="center">
+                  <Flex wrap="wrap" gap={2} mt="20px" justify="space-between" align="center">
                     <Flex>
                       <Link href={project.githubLink} mr="4" fontSize="40px" color="#242424">
                         <Icon as={RxGithubLogo} />
@@ -131,9 +138,14 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
                       <Link href={project.notionLink} mr="4" fontSize="40px" color="#242424">
                         <Icon as={RxNotionLogo} />
                       </Link>
-                      <Link href={project.vercelLink} fontSize="40px" color="#242424">
+                      <Link href={project.vercelLink} mr="4" fontSize="40px" color="#242424">
                         <Icon as={RxVercelLogo} />
                       </Link>
+                      {project.figmaLink && (
+                        <Link href={project.figmaLink} fontSize="40px" color="#242424">
+                          <Icon as={FaFigma} />
+                        </Link>
+                      )}
                     </Flex>
 
                     <Flex align="center" fontSize="20px" mt={{ base: 3, md: 0 }}>
@@ -146,13 +158,15 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
                 {/* Right Section */}
                 <Flex direction="column" mt="4">
                   <Flex justify="space-between" align="center" direction={{ base: 'column', md: 'row' }}>
-                    <Text fontSize="25px" fontWeight="bold">
+                    <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="bold">
                       {project.type}
                     </Text>
                     <Text fontSize="20px">기여도: {project.Participation}%</Text>
                   </Flex>
 
-                  <Text mt="2">{project.intro}</Text>
+                  <Text mt="2" fontSize={{ base: 'sm', md: 'md' }}>
+                    {project.intro}
+                  </Text>
 
                   <Flex my="3" borderBottom="1px solid #d9d9d9" />
 
