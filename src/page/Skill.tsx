@@ -28,6 +28,7 @@ const Skill = forwardRef<HTMLDivElement>((_props, ref) => {
                 'jquery',
                 'bootstrap',
                 'vite',
+                'chakra-ui',
               ].map(skill => (
                 <GridItem key={skill}>
                   <Image
