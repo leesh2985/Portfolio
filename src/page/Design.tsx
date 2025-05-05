@@ -1,38 +1,16 @@
-import styled from 'styled-components';
-
+import { Container, Heading } from '@chakra-ui/react';
 import { forwardRef } from 'react';
 import DesignCarousel from '../components/carousel/DesignCarousel';
 
 const Design = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <DesignContainer ref={ref}>
-      <DesignTitle>Design</DesignTitle>
+    <Container maxW="container.xl" borderBottom="2px dashed #ffecb3" p="50px" ref={ref}>
+      <Heading as="h2" fontSize="40px" fontWeight="bold" textAlign="center">
+        Design
+      </Heading>
       <DesignCarousel />
-    </DesignContainer>
+    </Container>
   );
 });
-
-const DesignContainer = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-
-  border-bottom: 2px dashed #ffecb3;
-
-  @media (max-width: 1024px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-  }
-`;
-
-const DesignTitle = styled.h2`
-  font-size: 40px;
-  font-weight: bold;
-`;
 
 export default Design;

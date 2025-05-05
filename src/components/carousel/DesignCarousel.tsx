@@ -155,22 +155,18 @@ const Container = styled.div`
 `;
 
 const SlideDiv = styled.div`
-  width: 350px !important;
+  width: 280px !important;
   height: 400px;
   border-radius: 15px;
   border: 1px solid #c9c9c9;
 
   @media (max-width: 1536px) {
     /* 노트북 화면 */
-    width: 275px !important;
+    width: 25px !important;
   }
 
   @media (max-width: 1440px) {
-    width: 350px !important;
-  }
-
-  @media (max-width: 1116px) {
-    width: 250px !important;
+    width: 385px !important;
   }
 
   @media (max-width: 1024px) {
@@ -180,16 +176,6 @@ const SlideDiv = styled.div`
 
   @media (max-width: 768px) {
     width: 215px !important;
-    height: 300px;
-  }
-
-  @media (max-width: 425px) {
-    width: 275px !important;
-    height: 300px;
-  }
-
-  @media (max-width: 320px) {
-    width: 220px !important;
     height: 300px;
   }
 `;

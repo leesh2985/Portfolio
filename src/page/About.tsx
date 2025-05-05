@@ -46,8 +46,8 @@ const Highlight = ({ children }: { children: React.ReactNode }) => (
 
 const About = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <Container maxW="container.xl" ref={ref}>
-      <Grid templateColumns="repeat(12, 1fr)" gap={10} alignItems="start" mt="100px">
+    <Container maxW="container.xl" borderBottom="2px dashed #ffecb3" ref={ref}>
+      <Grid templateColumns="repeat(12, 1fr)" gap={10} alignItems="start" mt="50px" p="50px">
         {/* 왼쪽 */}
         <GridItem colSpan={{ base: 12, md: 4 }}>
           <Grid templateRows="repeat(2, auto)" gap={6}>

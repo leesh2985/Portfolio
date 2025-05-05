@@ -1,7 +1,21 @@
-import styled, { css } from 'styled-components';
 import { RxGithubLogo, RxNotionLogo, RxVercelLogo } from 'react-icons/rx';
 import { BiTimeFive } from 'react-icons/bi';
 import { forwardRef } from 'react';
+import {
+  Container,
+  Image,
+  Card,
+  CardBody,
+  ListItem,
+  Heading,
+  Flex,
+  Icon,
+  Text,
+  Link,
+  Grid,
+  UnorderedList,
+  GridItem,
+} from '@chakra-ui/react';
 
 interface Project {
   imageSrc: string;
@@ -25,7 +39,7 @@ const projectsData: Project[] = [
     type: '팀프로젝트(6인)',
     Participation: '30',
     intro:
-      'Triptalk은 국내 여행의 추억과 경험을 공유하는 커뮤니티로, 프론트엔드 3명과 백엔드 3명이 협업하여 빠른 개발 서버를 위해 Vite를 활용한 프로젝트입니다.  UI부분을 주도적으로 작업했으며 리뷰맵 내정보 개인정보수정페이지등을 작업을 맡았으며 반응형 디자인을 통해 다양한 디바이스에서의 사용을 고려하여 작업을 진행 했으며 이해가 어려운 부분이 발생하면 신속히 대화를 통해 의견을 공유해서 해결했습니다.',
+      '국내 여행의 추억과 경험을 공유하는 커뮤니티로, 프론트엔드 3명과 백엔드 3명이 협업하여 빠른 개발 서버를 위해 Vite를 활용한 프로젝트입니다.  UI부분을 주도적으로 작업했으며 리뷰맵 내정보 개인정보수정페이지등을 작업을 맡았으며 반응형 디자인을 통해 다양한 디바이스에서의 사용을 고려하여 작업을 진행 했으며 이해가 어려운 부분이 발생하면 신속히 대화를 통해 의견을 공유해서 해결했습니다.',
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
@@ -61,7 +75,7 @@ const projectsData: Project[] = [
     type: '개인프로젝트',
     Participation: '100',
     intro:
-      'To-Do List 프로젝트는 수정 및 삭제 기능을 갖추고 있어 사용자가 편리하게 작업을 관리할 수 있습니다. 더불어, 간편한 완료 기능을 통해 오늘의 완료된 작업을 표시하는 기능을 제공합니다. 이 프로젝트는 HTML, CSS, JavaScript를 사용하여 구현되었으며, JS를 활용하여 명언이 새로 고침될 때마다 변경되게 했습니다.',
+      '수정 및 삭제 기능을 갖추고 있어 사용자가 편리하게 작업을 관리할 수 있습니다. 더불어, 간편한 완료 기능을 통해 오늘의 완료된 작업을 표시하는 기능을 제공합니다. HTML, CSS, JavaScript로 제작된 이 프로젝트는, 새로 고침할 때마다 명언이 바뀌는 기능을 통해 사용자 경험을 더했습니다.',
     skills: [
       'https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
       'https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
@@ -77,275 +91,90 @@ const projectsData: Project[] = [
     type: '개인프로젝트',
     Participation: '100',
     intro:
-      '한눈에 보기 좋은 포트폴리오 웹사이트로, 각 작업물을 효과적으로 모아놓은 플랫폼입니다. Vite를 사용하여 개발되었으며, 가독성을 중점으로 하여 반응형 디자인을 구현하였습니다. ',
+      '한눈에 보기 쉽도록 구성된 포트폴리오 웹사이트로, 주요 프로젝트를 효과적으로 정리하고 소개하는 데 중점을 두었습니다. Vite와 Chakra UI를 기반으로 빠른 개발 환경과 반응형 디자인 시스템을 구성하였으며, 다양한 화면 크기에 맞춰 콘텐츠가 자연스럽게 배치되도록 설계했습니다.',
     skills: [
       'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black',
       'https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white',
       'https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white',
-      'https://img.shields.io/badge/Styled-component-DB7093?style=for-the-badge&logo=Styled-component&logoColor=white',
+      'https://img.shields.io/badge/Chakra_UI-319795?style=for-the-badge&logo=Chakra UI&logoColor=white',
     ],
   },
 ];
 
 const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <ProjectsContainer ref={ref}>
-      <ProjectsTitle>Projects</ProjectsTitle>
-      <ProjectsList>
+    <Container maxW="container.xl" borderBottom="2px dashed #ffecb3" p="50px" ref={ref}>
+      <Heading as="h2" fontSize="40px" fontWeight="bold" textAlign="center">
+        Projects
+      </Heading>
+
+      <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6} mt="40px">
         {projectsData.map((project, index) => (
-          <ProjectsItem key={index}>
-            <Left>
-              <ProjectsImg src={project.imageSrc} alt={project.type} />
-              <Top>
-                <LinkSite>
-                  <GitHub href={project.githubLink}>
-                    <RxGithubLogo />
-                  </GitHub>
-                  <Notion href={project.notionLink}>
-                    <RxNotionLogo />
-                  </Notion>
-                  <Vercel href={project.vercelLink}>
-                    <RxVercelLogo />
-                  </Vercel>
-                </LinkSite>
-                <ProjectsSession>
-                  <Sessions>
-                    <Time />
-                    {project.session}
-                  </Sessions>
-                </ProjectsSession>
-              </Top>
-            </Left>
-            <Right>
-              <TypeDiv>
-                <ProjectsMake>{project.type}</ProjectsMake>
-                <ProjectParticipation>기여도: {project.Participation}%</ProjectParticipation>
-              </TypeDiv>
-              <ProjectIntro>{project.intro}</ProjectIntro>
-              <Line></Line>
-              <MainSkill>
-                <MainSkillTitle>주요기능</MainSkillTitle>
-                {project.skills.map((skill, skillIndex) => (
-                  <img key={skillIndex} src={skill} alt={`기술 스킬 ${skillIndex + 1}`} />
-                ))}
-              </MainSkill>
-            </Right>
-          </ProjectsItem>
+          <GridItem key={index}>
+            <Card>
+              <CardBody>
+                {/* Left Section */}
+                <Flex direction="column">
+                  <Image
+                    src={project.imageSrc}
+                    alt={project.type}
+                    borderRadius="lg"
+                    border="1px solid"
+                    borderColor="gray.200"
+                  />
+
+                  <Flex mt="20px" justify="space-between" align="center">
+                    <Flex>
+                      <Link href={project.githubLink} mr="4" fontSize="40px" color="#242424">
+                        <Icon as={RxGithubLogo} />
+                      </Link>
+                      <Link href={project.notionLink} mr="4" fontSize="40px" color="#242424">
+                        <Icon as={RxNotionLogo} />
+                      </Link>
+                      <Link href={project.vercelLink} fontSize="40px" color="#242424">
+                        <Icon as={RxVercelLogo} />
+                      </Link>
+                    </Flex>
+
+                    <Flex align="center" fontSize="20px" mt={{ base: 3, md: 0 }}>
+                      <Icon as={BiTimeFive} mr="2" />
+                      <Text>{project.session}</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+
+                {/* Right Section */}
+                <Flex direction="column" mt="4">
+                  <Flex justify="space-between" align="center" direction={{ base: 'column', md: 'row' }}>
+                    <Text fontSize="25px" fontWeight="bold">
+                      {project.type}
+                    </Text>
+                    <Text fontSize="20px">기여도: {project.Participation}%</Text>
+                  </Flex>
+
+                  <Text mt="2">{project.intro}</Text>
+
+                  <Flex my="3" borderBottom="1px solid #d9d9d9" />
+
+                  <UnorderedList mb="5">
+                    <ListItem fontSize="20px" fontWeight="700">
+                      주요기능
+                    </ListItem>
+                  </UnorderedList>
+
+                  <Flex wrap="wrap">
+                    {project.skills.map((skill, idx) => (
+                      <Image key={idx} src={skill} alt={`기술 스킬 ${idx + 1}`} mr="2" mb="2" />
+                    ))}
+                  </Flex>
+                </Flex>
+              </CardBody>
+            </Card>
+          </GridItem>
         ))}
-      </ProjectsList>
-    </ProjectsContainer>
+      </Grid>
+    </Container>
   );
 });
-
-const ProjectsContainer = styled.div`
-  width: 80%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 50px;
-  border-bottom: 2px dashed #ffecb3;
-
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
-`;
-
-const ProjectsTitle = styled.h2`
-  font-size: 40px;
-  font-weight: bold;
-`;
-
-const ProjectsList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 40px;
-  width: 90%;
-
-  @media (max-width: 1440px) {
-    width: 100%;
-  }
-
-  @media (max-width: 1290px) {
-    width: 100%;
-  }
-
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
-
-  @media (max-width: 630px) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media (max-width: 425px) {
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const ProjectsItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  width: 49%;
-  height: 60%;
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #c9c9c9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-  &:nth-child(2) {
-    margin-right: 0px;
-  }
-  &:last-child {
-    margin-right: 0px;
-  }
-
-  @media (max-width: 630px) {
-    width: 100%;
-  }
-
-  @media (max-width: 425px) {
-    width: 100%;
-  }
-`;
-
-const LNG = css`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Left = styled.div`
-  ${LNG}
-`;
-const Right = styled.div`
-  ${LNG}
-`;
-
-const ProjectsImg = styled.img`
-  border: 1px solid #c9c9c9;
-  border-radius: 15px;
-`;
-
-const TypeDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 705px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-`;
-
-const ProjectsMake = styled.div`
-  font-size: 25px;
-  font-weight: 700;
-
-  @media (max-width: 855px) {
-    font-size: 20px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 25px;
-  }
-`;
-
-const ProjectParticipation = styled.div`
-  font-size: 20px;
-
-  @media (max-width: 855px) {
-    font-size: 15px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 20px;
-  }
-`;
-
-const ProjectIntro = styled.div`
-  margin-top: 10px;
-`;
-
-const Line = styled.div`
-  margin: 10px 0;
-  border: 1px solid #d9d9d9;
-`;
-
-const MainSkill = styled.ul`
-  margin-bottom: 20px;
-
-  img {
-    margin-right: 10px;
-  }
-`;
-
-const MainSkillTitle = styled.li`
-  font-size: 20px;
-  font-weight: 700;
-`;
-
-const Top = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-
-  @media (max-width: 1290px) {
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: 950px) {
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: 425px) {
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-`;
-
-const LinkSite = styled.div``;
-
-const ProjectsSession = styled.div`
-  font-size: 20px;
-`;
-
-const Time = styled(BiTimeFive)`
-  margin-right: 10px;
-`;
-
-const Sessions = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const LinkStyle = css`
-  color: #242424;
-  font-size: 40px;
-  margin-right: 20px;
-`;
-
-const GitHub = styled.a`
-  ${LinkStyle}
-`;
-
-const Notion = styled.a`
-  ${LinkStyle}
-`;
-
-const Vercel = styled.a`
-  ${LinkStyle}
-  margin-right: 0px;
-`;
 
 export default Projects;
