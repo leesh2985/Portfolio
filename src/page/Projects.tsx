@@ -32,6 +32,24 @@ interface Project {
 }
 
 const projectsData: Project[] = [
+  // {
+  //   imageSrc: '/img/ypsilon.png', // 대표 이미지가 있다면 넣고, 없다면 대체 이미지나 placeholder 사용
+  //   githubLink: '',
+  //   notionLink: '',
+  //   vercelLink: '',
+  //   figmaLink:
+  //     'https://www.figma.com/design/Wn1YuZ6zJKYdg2GGJrOnsv/2024.02.27_%EC%84%9D%ED%8F%AC?node-id=0-1&m=dev&t=sI24h8TryKKBJWTh-1',
+  //   session: '24/02 ~ 현재',
+  //   type: 'YPSILON (에코씨앤에이)',
+  //   Participation: '50',
+  //   intro:
+  //     '“YPSILON” 환경 플랫폼 프로젝트에 프론트엔드 개발자로 참여하여 퍼블리싱 및 기능 개발을 약 50% 기여했습니다. 디자이너 없이 기획부터 Figma 디자인, HTML/CSS/JS 마크업 및 기능 구현까지 직접 수행하였고, JointJS, Apache ECharts 등을 활용하여 공정도 및 그래프 시각화를 구현해 사용자 경험을 개선했습니다.',
+  //   skills: [
+  //     'https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
+  //     'https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
+  //     'https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+  //   ],
+  // },
   {
     imageSrc: '/img/triptalk.png',
     githubLink: 'https://github.com/triptalk-4/triptalk-frontend',
@@ -132,15 +150,21 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
 
                   <Flex wrap="wrap" gap={2} mt="20px" justify="space-between" align="center">
                     <Flex>
-                      <Link href={project.githubLink} mr="4" fontSize="40px" color="#242424">
-                        <Icon as={RxGithubLogo} />
-                      </Link>
-                      <Link href={project.notionLink} mr="4" fontSize="40px" color="#242424">
-                        <Icon as={RxNotionLogo} />
-                      </Link>
-                      <Link href={project.vercelLink} mr="4" fontSize="40px" color="#242424">
-                        <Icon as={RxVercelLogo} />
-                      </Link>
+                      {project.githubLink && (
+                        <Link href={project.githubLink} mr="4" fontSize="40px" color="#242424">
+                          <Icon as={RxGithubLogo} />
+                        </Link>
+                      )}
+                      {project.notionLink && (
+                        <Link href={project.notionLink} mr="4" fontSize="40px" color="#242424">
+                          <Icon as={RxNotionLogo} />
+                        </Link>
+                      )}
+                      {project.vercelLink && (
+                        <Link href={project.vercelLink} mr="4" fontSize="40px" color="#242424">
+                          <Icon as={RxVercelLogo} />
+                        </Link>
+                      )}
                       {project.figmaLink && (
                         <Link href={project.figmaLink} fontSize="40px" color="#242424">
                           <Icon as={FaFigma} />
@@ -170,7 +194,7 @@ const Projects = forwardRef<HTMLDivElement>((_props, ref) => {
 
                   <Flex my="3" borderBottom="1px solid #d9d9d9" />
 
-                  <UnorderedList mb="5">
+                  <UnorderedList mb="5" ms="0">
                     <ListItem fontSize="20px" fontWeight="700">
                       주요기능
                     </ListItem>
