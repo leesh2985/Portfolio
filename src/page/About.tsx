@@ -103,9 +103,9 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         </GridItem>
         <GridItem colSpan={{ base: 12, md: 8 }}>
           {/* 오른쪽 */}
-          <Heading fontSize={{ base: '20px', md: '24px', lg: '30px' }} mb={{ base: 3, md: 5 }}>
-            새로운 기술을 <Highlight>탐색하고</Highlight> 적용하는 것을 <Highlight>즐기며</Highlight>, 사용자 중심의 웹
-            화면을 <Highlight>기획부터 구현까지</Highlight> 직접 다뤄본 프론트엔드 개발자 이승현입니다.
+          <Heading fontSize={{ base: '20px', md: '24px', lg: '30px' }} mb={{ base: 3, md: 5 }} lineHeight="1.8">
+            사용자 중심의 웹 화면을 <Highlight>기획부터 디자인, 퍼블리싱, 개발</Highlight>까지 직접 다뤄본{' '}
+            <Highlight>웹 퍼블리셔 겸 프론트엔드 개발자</Highlight> 이승현입니다.
           </Heading>
           <Card>
             <CardBody>
@@ -117,24 +117,23 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   <List spacing={3} pt="2">
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      밝고 끈기 있는 태도로 사용자의 입장에서 완성도 높은 웹 화면을 구현합니다.
+                      HTML/CSS, 반응형 웹, 접근성을 고려한 마크업에 능숙하며, 시멘틱 구조를 중요하게 생각합니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      새로운 기술을 익히고 실무에 적용하는 과정을 즐기며, 팀과의 협업도 중요하게 생각합니다.
+                      디자이너 없이도 주어진 요구사항을 분석해 퍼블리싱과 프론트엔드 구현까지 수행할 수 있습니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      깔끔하고 유지보수하기 쉬운 코드, 그리고 직관적인 UI를 위해 끊임없이 개선해 나갑니다.
+                      React를 활용한 컴포넌트 기반 UI 구성 및 인터랙션 구현 경험이 있습니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      디자이너 없이도 요구사항을 분석해 퍼블리싱과 프론트엔드 개발을 모두 수행할 수 있습니다.
+                      다양한 툴에 익숙하며, 사용자 흐름과 기획 의도에 대한 이해를 높이기 위해 꾸준히 학습하고 있습니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      데이터 시각화, 사용자 인터랙션, 애니메이션 등 인터랙티브한 웹에 높은 관심을 가지고 직접 구현해본
-                      경험이 있습니다.
+                      사용자 인터랙션, 애니메이션, 데이터 시각화 등 인터랙티브 웹에도 높은 관심을 가지고 구현해왔습니다.
                     </ListItem>
                   </List>
                 </Box>

@@ -8,15 +8,15 @@ const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
     <Container maxW="container.xl" py={{ base: 12, md: 20 }} ref={ref}>
       <VStack spacing={10} textAlign="center">
         <Text fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }} fontWeight="bold">
-          늘 사용자의 경험을 개선하고자 최선을 다하며,
+          사용자 경험을 더 나은 방향으로 만들기 위해 노력하고 있으며,
           <br />
-          앞으로도 높은 수준의 웹 개발을 하고싶습니다.
+          앞으로도 유용하고 멋진 웹 서비스를 만들고 싶습니다.
         </Text>
 
         <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>
           <Typewriter
             options={{
-              strings: ['포트폴리오를 끝까지 살펴봐주셔서 감사합니다!'],
+              strings: ['포트폴리오를 끝까지 봐주셔서 감사합니다. 좋은 인연으로 이어지길 바랍니다 :)'],
               autoStart: true,
               loop: true,
             }}
