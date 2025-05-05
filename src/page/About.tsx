@@ -47,20 +47,25 @@ const Highlight = ({ children }: { children: React.ReactNode }) => (
 const About = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <Container maxW="container.xl" borderBottom="2px dashed #ffecb3" ref={ref}>
-      <Grid templateColumns="repeat(12, 1fr)" gap={10} alignItems="start" mt="50px" p="50px">
+      <Grid
+        templateColumns={{ base: '1fr', md: 'repeat(12, 1fr)' }}
+        gap={{ base: 6, md: 10 }}
+        alignItems="start"
+        mt="50px"
+        p="50px">
         {/* 왼쪽 */}
         <GridItem colSpan={{ base: 12, md: 4 }}>
           <Grid templateRows="repeat(2, auto)" gap={6}>
             <GridItem>
-              <Card maxW="sm">
+              <Card maxW="100%">
                 <Image src="/img/me.jpg" alt="증명사진" borderRadius="lg" />
               </Card>{' '}
             </GridItem>
 
             <GridItem>
-              <Card maxW="sm">
-                <CardBody>
-                  <List spacing={3}>
+              <Card maxW="100%">
+                <CardBody p={{ base: 4, md: 6 }}>
+                  <List spacing={{ base: 2, md: 3 }}>
                     <ListItem>
                       <ListIcon as={BsPerson} />: 이승현
                     </ListItem>
@@ -98,7 +103,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         </GridItem>
         <GridItem colSpan={{ base: 12, md: 8 }}>
           {/* 오른쪽 */}
-          <Heading fontSize={{ base: '25px', md: '28px', lg: '30px' }} mb="5" lineHeight="1.8">
+          <Heading fontSize={{ base: '20px', md: '24px', lg: '30px' }} mb={{ base: 3, md: 5 }}>
             새로운 기술을 <Highlight>탐색하고</Highlight> 적용하는 것을 <Highlight>즐기며</Highlight>, 사용자 중심의 웹
             화면을 <Highlight>기획부터 구현까지</Highlight> 직접 다뤄본 프론트엔드 개발자 이승현입니다.
           </Heading>
