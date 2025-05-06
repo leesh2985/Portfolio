@@ -16,7 +16,7 @@ const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
         <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>
           <Typewriter
             options={{
-              strings: ['포트폴리오를 끝까지 봐주셔서 감사합니다. 좋은 인연으로 이어지길 바랍니다 :)'],
+              strings: ['포트폴리오를 끝까지 봐주셔서 감사합니다. 좋은 인연이 되었으면 좋겠습니다 :)'],
               autoStart: true,
               loop: true,
             }}

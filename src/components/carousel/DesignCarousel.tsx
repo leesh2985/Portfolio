@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useState } from 'react';
 import DesignPopup from '../../page/DesignPopup';
+import { Card, CardBody, Image, Box } from '@chakra-ui/react';
 
 interface imgData {
   imgDatas: string[];
@@ -40,7 +41,7 @@ const DesignCarousel = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -130,71 +131,51 @@ const DesignCarousel = () => {
   }
 
   return (
-    <Container>
+    <Box mt="2.5rem">
       <Sliders {...settings}>
         {imgDatas.imgDatas.map((src, index) => (
-          <SlideDiv key={index} onClick={() => openPopup(imgDatas, index)}>
-            <SlideImg src={src} alt={`이미지`} />
-          </SlideDiv>
+          <Card height="750px" key={index} onClick={() => openPopup(imgDatas, index)}>
+            <CardBody p={0} height="100%">
+              <Image
+                src={src}
+                alt={`이미지`}
+                height="100%"
+                width="100%"
+                objectFit="cover"
+                objectPosition="top"
+                borderRadius="md"
+                cursor="pointer"
+              />
+            </CardBody>
+          </Card>
         ))}
       </Sliders>
 
       {isPopupOpen && popupData && popupIndex !== null && (
         <DesignPopup data={popupData} onClose={closePopup} selectedIndex={popupIndex} />
       )}
-    </Container>
+    </Box>
   );
 };
 
 export default DesignCarousel;
 
-const Container = styled.div`
-  margin-top: 40px;
-  width: 100%;
-  height: 100%;
-`;
-
-const SlideDiv = styled.div`
-  width: 280px !important;
-  height: 400px;
-  border-radius: 15px;
-  border: 1px solid #c9c9c9;
-
-  @media (max-width: 1536px) {
-    /* 노트북 화면 */
-    width: 25px !important;
-  }
-
-  @media (max-width: 1440px) {
-    width: 385px !important;
-  }
-
-  @media (max-width: 1024px) {
-    width: 300px !important;
-    height: 300px;
-  }
-
-  @media (max-width: 768px) {
-    width: 215px !important;
-    height: 300px;
-  }
-`;
-
-const SlideImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 15px;
-  cursor: pointer;
-`;
-
 const Sliders = styled(Slider)`
+  .slick-slide {
+    padding: 0 10px; /* 좌우 여백 */
+    box-sizing: border-box;
+  }
+
+  .slick-list {
+    margin: 0 -10px; /* 슬라이드 padding과 맞춰줌 */
+  }
+
   .slick-prev:before,
   .slick-next:before {
     font-size: 40px;
     color: #fdd835;
   }
+
   .slick-prev {
     left: -46px;
   }
