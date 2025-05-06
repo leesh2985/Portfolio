@@ -49,7 +49,7 @@ const projectsData: Project[] = [
     notionLink: 'https://antique-koala-cd8.notion.site/43222cd36db74bb09c213a87995d7602?pvs=4',
     vercelLink: 'https://hdrc.vercel.app/',
     figmaLink: 'https://www.figma.com/design/3xjzyOkMeXZn8oMBEElXCd/HDRC?node-id=0-1&m=dev&t=1MQdGDiUPhcpEArj-1',
-    session: '23/07/03~23/08/10 → 25/05/06 (리디자인)',
+    session: '23/07/03~23/08/10 → 25/05/02~ (리디자인)',
     type: '개인프로젝트',
     Participation: '100',
     intro: `HERC 러닝 커뮤니티는 단체로 뛰기를 꺼리는 러닝 열정을 가진 개인들을 위한 플랫폼입니다. 여기에서 러너들은 간편하게 러닝에 관한 정보를 얻고 서로 소통할 수 있는 커뮤니티를 형성합니다. 이 프로젝트는 Vite를 활용하여 빠른 개발 서버와 최적화를 위한 빌드 시간을 확보하였으며, 데이터베이스로는 파이어베이스를 효율적으로 활용하여 작업되었습니다.`,
