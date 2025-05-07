@@ -44,7 +44,7 @@ const projectsData: Project[] = [
     ],
   },
   {
-    imageSrc: '/img/hdrc.png',
+    imageSrc: '/img/hdrc2.png',
     githubLink: 'https://github.com/leesh2985/Portfolio00',
     notionLink: 'https://antique-koala-cd8.notion.site/43222cd36db74bb09c213a87995d7602?pvs=4',
     vercelLink: 'https://hdrc.vercel.app/',
