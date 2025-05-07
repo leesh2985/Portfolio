@@ -24,25 +24,25 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  // {
-  //   imageSrc: '/img/ypsilon.png', // 대표 이미지가 있다면 넣고, 없다면 대체 이미지나 placeholder 사용
-  //   githubLink: '',
-  //   notionLink: '',
-  //   vercelLink: '',
-  //   figmaLink:
-  //     'https://www.figma.com/design/Wn1YuZ6zJKYdg2GGJrOnsv/2024.02.27_%EC%84%9D%ED%8F%AC?node-id=0-1&m=dev&t=sI24h8TryKKBJWTh-1',
-  //   session: '24/02 ~ 현재',
-  //   type: 'YPSILON (에코씨앤에이)',
-  //   Participation: '50',
-  //   intro:
-  //     '“YPSILON” 환경 플랫폼 프로젝트에 프론트엔드 개발자로 참여하여 퍼블리싱 및 기능 개발을 약 50% 기여했습니다. 디자이너 없이 기획부터 Figma 디자인, HTML/CSS/JS 마크업 및 기능 구현까지 직접 수행하였고, JointJS, Apache ECharts 등을 활용하여 공정도 및 그래프 시각화를 구현해 사용자 경험을 개선했습니다.',
-  //   skills: [
-  //     'https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
-  //     'https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
-  //     'https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
-  //     'https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white',
-  //   ],
-  // },
+  {
+    imageSrc: '/img/ecocna.png',
+    githubLink: '',
+    notionLink: '',
+    vercelLink: '',
+    figmaLink:
+      'https://www.figma.com/design/Wn1YuZ6zJKYdg2GGJrOnsv/2024.02.27_%EC%84%9D%ED%8F%AC?node-id=0-1&m=dev&t=sI24h8TryKKBJWTh-1',
+    session: '24/02 ~ 현재',
+    type: 'YPSILON (에코씨앤에이)',
+    Participation: '50',
+    intro:
+      '“YPSILON” 환경 플랫폼 프로젝트에 프론트엔드 개발자로 참여하여 기획부터 퍼블리싱, 기능 구현까지 전반적인 프론트엔드 개발을 주도적으로 수행했습니다. 디자이너 없이 Figma 기반의 화면 설계부터 HTML/CSS/JS 마크업, 기능 구현까지 직접 진행하였고, JointJS, Apache ECharts 등을 활용하여 공정도 및 그래프 시각화 기능을 개발해 사용자 경험을 향상시켰습니다.',
+    skills: [
+      'https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
+      'https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
+      'https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+      'https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white',
+    ],
+  },
   {
     imageSrc: '/img/hdrc.png',
     githubLink: 'https://github.com/leesh2985/Portfolio00',
