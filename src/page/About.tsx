@@ -143,9 +143,14 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   </Heading>
                   <List spacing={3} pt="2">
                     <ListItem>
-                      <Text fontWeight="bold" mb={2}>
+                    <Box display="flex" flexDirection="column" mb={2}>
+                      <Text fontWeight="bold">
                         2024.02 - 현재 : ㈜에코씨앤에이 (프론트엔드 개발자)
                       </Text>
+                      <span style={{ fontWeight: 'normal', fontSize: '0.9em', color: '#555' }}>
+                        ※ 현재 재직 중이지만, 합격 시 빠른 입사/일정 조율 가능
+                      </span>
+                    </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
                           환경 플랫폼 ‘YPSILON’의 UI/UX 기획, 화면 설계 및 기능 구현
