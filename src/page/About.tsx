@@ -18,7 +18,7 @@ import {
 import { BsPerson } from 'react-icons/bs';
 import { RiCakeLine } from 'react-icons/ri';
 import { LuSchool } from 'react-icons/lu';
-import { HiOutlineMail } from 'react-icons/hi';
+import { HiOutlineMail, HiOutlineBookOpen } from 'react-icons/hi';
 import { MdCheckCircle } from 'react-icons/md';
 import { FiSmartphone } from 'react-icons/fi';
 import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
@@ -76,6 +76,9 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                       <ListIcon as={LuSchool} />: 동명대학교, 시각디자인학과
                     </ListItem>
                     <ListItem>
+                      <ListIcon as={HiOutlineBookOpen} />: 방통대 컴퓨터과학과 재학
+                    </ListItem>
+                    <ListItem>
                       <ListIcon as={HiOutlineMail} />: leesh2985@naver.com
                     </ListItem>
                     <ListItem>
@@ -104,8 +107,8 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         <GridItem colSpan={{ base: 12, md: 8 }}>
           {/* 오른쪽 */}
           <Heading fontSize={{ base: '20px', md: '24px', lg: '30px' }} mb={{ base: 3, md: 5 }} lineHeight="1.8">
-            사용자 중심의 웹 화면을 <Highlight>기획부터 디자인, 퍼블리싱, 개발</Highlight>까지 직접 다뤄본{' '}
-            <Highlight>웹 퍼블리셔 겸 프론트엔드 개발자</Highlight> 이승현입니다.
+            사용자 경험을 중심으로 <Highlight>기획부터 디자인, 개발 협업까지</Highlight> 경험한{' '}
+            <Highlight>UI/UX Designer</Highlight> 이승현입니다.
           </Heading>
           <Card>
             <CardBody>
@@ -117,23 +120,23 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   <List spacing={3} pt="2">
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      HTML/CSS, 반응형 웹, 접근성을 고려한 마크업에 능숙하며, 시멘틱 구조를 중요하게 생각합니다.
+                      기존 서비스 구조와 요구사항을 빠르게 이해하고 사용자 중심의 화면을 설계합니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      디자이너 없이도 주어진 요구사항을 분석해 퍼블리싱과 프론트엔드 구현까지 수행할 수 있습니다.
+                      복잡한 데이터와 기능을 직관적인 사용자 경험으로 전달하는 UI/UX 설계를 중요하게 생각합니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      React를 활용한 컴포넌트 기반 UI 구성 및 인터랙션 구현 경험이 있습니다.
+                      디자인, 퍼블리싱, 개발 협업 경험을 바탕으로 구현 가능성을 고려한 현실적인 설계를 지향합니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      다양한 툴에 익숙하며, 사용자 흐름과 기획 의도에 대한 이해를 높이기 위해 꾸준히 학습하고 있습니다.
+                      컴포넌트 기반 설계를 통해 일관성 있는 UI와 효율적인 협업을 지향합니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      사용자 인터랙션, 애니메이션, 데이터 시각화 등 인터랙티브 웹에도 높은 관심을 가지고 구현해왔습니다.
+                      개발자 및 고객사와 원활하게 소통하며 요구사항을 빠르게 반영합니다.
                     </ListItem>
                   </List>
                 </Box>
@@ -143,14 +146,22 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   </Heading>
                   <List spacing={3} pt="2">
                     <ListItem>
-                    <Box display="flex" flexDirection="column" mb={2}>
-                      <Text fontWeight="bold">
-                        2024.02 - 현재 : ㈜에코씨앤에이 (프론트엔드 개발자)
-                      </Text>
-                      <span style={{ fontWeight: 'normal', fontSize: '0.9em', color: '#555' }}>
-                        ※ 현재 재직 중이지만, 합격 시 빠른 입사/일정 조율 가능
-                      </span>
-                    </Box>
+                      <Box display="flex" flexDirection="column" mb={2}>
+                        <Text fontWeight="bold">2025.06 - 현재 : ㈜씨씨미디어서비스 (UI/UX Designer & Publisher)</Text>
+                        <span style={{ fontWeight: 'normal', fontSize: '0.9em', color: '#555' }}>
+                          ※ 현재 재직 중이지만, 합격 시 빠른 입사/일정 조율 가능
+                        </span>
+                      </Box>
+                      <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
+                        <Text fontSize="sm" color="gray.700" lineHeight="1.6">
+                          기획안 및 요구사항 기반 UI 구현·퍼블리싱 수행
+                          <br />
+                          고객사 요구사항 반영과 운영 환경 개선을 통한 서비스 사용성 향상
+                        </Text>
+                      </Box>
+                    </ListItem>
+                    <ListItem>
+                      <Box mb={2}>2024.02 - 2025.05 : ㈜에코씨앤에이 (프론트엔드 개발자)</Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
                           환경 플랫폼 ‘YPSILON’의 UI/UX 기획, 화면 설계 및 기능 구현
@@ -160,15 +171,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                       </Box>
                     </ListItem>
                     <ListItem>
-                      2023.03 - 2023.11 : 제로베이스 (프론트엔드 취업 스쿨 수료)
-                      <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
-                        <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          React, JavaScript, Git, REST API 등 실습 프로젝트 수행
-                        </Text>
-                      </Box>
-                    </ListItem>
-                    <ListItem>
-                      2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)
+                      <Box mb={2}>2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)</Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
                           건강, 주거, 스포츠 등 다양한 분야의 상세 페이지를 기획부터 디자인까지 수행하며 25건 이상 업무
@@ -176,7 +179,6 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                         </Text>
                       </Box>
                     </ListItem>
-                    <ListItem>2016.03 - 2021.08 : 동명대학교 졸업 (시각디자인학과)</ListItem>
                   </List>
                 </Box>
               </Stack>
