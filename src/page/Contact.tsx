@@ -1,27 +1,27 @@
 import { forwardRef } from 'react';
 import { AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 import Typewriter from 'typewriter-effect';
-import { Container, Icon, Text, Link, VStack, HStack } from '@chakra-ui/react';
+import { Container, Icon, Text, Link, VStack, HStack, Box } from '@chakra-ui/react';
 
 const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <Container maxW="container.xl" py={{ base: 12, md: 20 }} ref={ref}>
       <VStack spacing={10} textAlign="center">
         <Text fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }} fontWeight="bold">
-          사용자 경험을 더 나은 방향으로 만들기 위해 노력하고 있으며,
+          사용자 중심의 문제 해결을 통해 서비스 가치를 높이고,
           <br />
-          앞으로도 유용하고 멋진 웹 서비스를 만들고 싶습니다.
+          비즈니스 목표와 사용자 경험을 연결하는 디자이너를 지향합니다.
         </Text>
 
-        <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>
+        <Box fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>
           <Typewriter
             options={{
-              strings: ['포트폴리오를 끝까지 봐주셔서 감사합니다. 좋은 인연이 되었으면 좋겠습니다 :)'],
+              strings: ['포트폴리오를 끝까지 읽어주셔서 감사합니다.'],
               autoStart: true,
               loop: true,
             }}
           />
-        </Text>
+        </Box>
 
         <HStack spacing={8} pt={6}>
           <Link href="https://github.com/leesh2985" isExternal>

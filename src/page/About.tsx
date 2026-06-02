@@ -147,7 +147,7 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   <List spacing={3} pt="2">
                     <ListItem>
                       <Box display="flex" flexDirection="column" mb={2}>
-                        <Text fontWeight="bold">2025.06 - 현재 : ㈜씨씨미디어서비스 (UI/UX Designer & Publisher)</Text>
+                        <Text fontWeight="bold">2025.06 - 현재 : ㈜에이다루트 (UI/UX Designer & Publisher)</Text>
                         <span style={{ fontWeight: 'normal', fontSize: '0.9em', color: '#555' }}>
                           ※ 현재 재직 중이지만, 합격 시 빠른 입사/일정 조율 가능
                         </span>
