@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineGithub, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import Typewriter from 'typewriter-effect';
 import { Container, Icon, Text, Link, VStack, HStack, Box } from '@chakra-ui/react';
 
@@ -29,6 +29,10 @@ const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
           </Link>
           <Link href="mailto:leesh2985@naver.com">
             <Icon as={AiOutlineMail} boxSize={{ base: 8, md: 10 }} color="#242424" />
+          </Link>
+          {/* 전화번호 추가 */}
+          <Link href="tel:010-2985-8223">
+            <Icon as={AiOutlinePhone} boxSize={{ base: 8, md: 10 }} color="#242424" />
           </Link>
         </HStack>
       </VStack>

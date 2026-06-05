@@ -16,7 +16,6 @@ import {
   GridItem,
 } from '@chakra-ui/react';
 import { BsPerson } from 'react-icons/bs';
-import { RiCakeLine } from 'react-icons/ri';
 import { LuSchool } from 'react-icons/lu';
 import { HiOutlineMail, HiOutlineBookOpen } from 'react-icons/hi';
 import { MdCheckCircle } from 'react-icons/md';
@@ -57,20 +56,17 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         <GridItem colSpan={{ base: 12, md: 4 }}>
           <Grid templateRows="repeat(2, auto)" gap={6}>
             <GridItem>
-              <Card maxW="100%">
+              <Card maxW="290px" mx="auto">
                 <Image src="/img/me.jpg" alt="증명사진" borderRadius="lg" />
               </Card>{' '}
             </GridItem>
 
             <GridItem>
-              <Card maxW="100%">
+              <Card maxW="290px" mx="auto">
                 <CardBody p={{ base: 4, md: 6 }}>
                   <List spacing={{ base: 2, md: 3 }}>
                     <ListItem>
                       <ListIcon as={BsPerson} />: 이승현
-                    </ListItem>
-                    <ListItem>
-                      <ListIcon as={RiCakeLine} />: 1997.12.13
                     </ListItem>
                     <ListItem>
                       <ListIcon as={LuSchool} />: 동명대학교, 시각디자인학과
@@ -120,23 +116,15 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   <List spacing={3} pt="2">
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      기존 서비스 구조와 요구사항을 빠르게 이해하고 사용자 중심의 화면을 설계합니다.
+                      디자인부터 퍼블리싱, 프론트 개발까지 직접 경험한 UI/UX 디자이너입니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      복잡한 데이터와 기능을 직관적인 사용자 경험으로 전달하는 UI/UX 설계를 중요하게 생각합니다.
+                      구현 가능성을 고려한 설계를 합니다. 개발자와 같은 언어로 대화할 수 있습니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      디자인, 퍼블리싱, 개발 협업 경험을 바탕으로 구현 가능성을 고려한 현실적인 설계를 지향합니다.
-                    </ListItem>
-                    <ListItem>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
-                      컴포넌트 기반 설계를 통해 일관성 있는 UI와 효율적인 협업을 지향합니다.
-                    </ListItem>
-                    <ListItem>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
-                      개발자 및 고객사와 원활하게 소통하며 요구사항을 빠르게 반영합니다.
+                      컴포넌트 기반 설계로 일관된 UX와 빠른 협업을 지향합니다.
                     </ListItem>
                   </List>
                 </Box>
@@ -148,34 +136,36 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                     <ListItem>
                       <Box display="flex" flexDirection="column" mb={2}>
                         <Text fontWeight="bold">2025.06 - 현재 : ㈜에이다루트 (UI/UX Designer & Publisher)</Text>
-                        <span style={{ fontWeight: 'normal', fontSize: '0.9em', color: '#555' }}>
-                          ※ 현재 재직 중이지만, 합격 시 빠른 입사/일정 조율 가능
-                        </span>
                       </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          기획안 및 요구사항 기반 UI 구현·퍼블리싱 수행
+                          기획안 기반 UI 구현·퍼블리싱 및 UI/UX 검수, 기획·개발 조직 간 협업
                           <br />
-                          고객사 요구사항 반영과 운영 환경 개선을 통한 서비스 사용성 향상
+                          일관성 없는 UI 개선으로 사용성 강화 · UI 이슈 신속 대응으로 운영 안정성 향상
                         </Text>
                       </Box>
                     </ListItem>
+
                     <ListItem>
-                      <Box mb={2}>2024.02 - 2025.05 : ㈜에코씨앤에이 (프론트엔드 개발자)</Box>
+                      <Box mb={2}>
+                        <Text fontWeight="bold">2024.02 - 2025.05 : ㈜에코씨앤에이 (프론트엔드 개발자)</Text>
+                      </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          환경 플랫폼 ‘YPSILON’의 UI/UX 기획, 화면 설계 및 기능 구현
+                          환경 플랫폼 YPSILON 화면 설계·피그마 작업, 반응형 퍼블리싱, 시각화 자료 구현
                           <br />
-                          사용자 메뉴얼 제작 및 프론트엔드 유지보수 대응 경험
+                          와이어프레임 및 컴포넌트 정의로 개발 협업 효율화
                         </Text>
                       </Box>
                     </ListItem>
+
                     <ListItem>
-                      <Box mb={2}>2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)</Box>
+                      <Box mb={2}>
+                        <Text fontWeight="bold">2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)</Text>
+                      </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          건강, 주거, 스포츠 등 다양한 분야의 상세 페이지를 기획부터 디자인까지 수행하며 25건 이상 업무
-                          수행
+                          클라이언트 맞춤 상세페이지 기획·디자인 · 건강·주거·스포츠 등 25건 이상 제작
                         </Text>
                       </Box>
                     </ListItem>
