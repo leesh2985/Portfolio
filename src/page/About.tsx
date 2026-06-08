@@ -16,9 +16,8 @@ import {
   GridItem,
 } from '@chakra-ui/react';
 import { BsPerson } from 'react-icons/bs';
-import { RiCakeLine } from 'react-icons/ri';
 import { LuSchool } from 'react-icons/lu';
-import { HiOutlineMail } from 'react-icons/hi';
+import { HiOutlineMail, HiOutlineBookOpen } from 'react-icons/hi';
 import { MdCheckCircle } from 'react-icons/md';
 import { FiSmartphone } from 'react-icons/fi';
 import { RxGithubLogo, RxNotionLogo } from 'react-icons/rx';
@@ -57,23 +56,23 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         <GridItem colSpan={{ base: 12, md: 4 }}>
           <Grid templateRows="repeat(2, auto)" gap={6}>
             <GridItem>
-              <Card maxW="100%">
+              <Card maxW="290px" mx="auto">
                 <Image src="/img/me.jpg" alt="증명사진" borderRadius="lg" />
               </Card>{' '}
             </GridItem>
 
             <GridItem>
-              <Card maxW="100%">
+              <Card maxW="290px" mx="auto">
                 <CardBody p={{ base: 4, md: 6 }}>
                   <List spacing={{ base: 2, md: 3 }}>
                     <ListItem>
                       <ListIcon as={BsPerson} />: 이승현
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={RiCakeLine} />: 1997.12.13
+                      <ListIcon as={LuSchool} />: 동명대학교, 시각디자인학과
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={LuSchool} />: 동명대학교, 시각디자인학과
+                      <ListIcon as={HiOutlineBookOpen} />: 방통대 컴퓨터과학과 재학
                     </ListItem>
                     <ListItem>
                       <ListIcon as={HiOutlineMail} />: leesh2985@naver.com
@@ -104,8 +103,8 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
         <GridItem colSpan={{ base: 12, md: 8 }}>
           {/* 오른쪽 */}
           <Heading fontSize={{ base: '20px', md: '24px', lg: '30px' }} mb={{ base: 3, md: 5 }} lineHeight="1.8">
-            사용자 중심의 웹 화면을 <Highlight>기획부터 디자인, 퍼블리싱, 개발</Highlight>까지 직접 다뤄본{' '}
-            <Highlight>웹 퍼블리셔 겸 프론트엔드 개발자</Highlight> 이승현입니다.
+            사용자 경험을 중심으로 <Highlight>기획부터 디자인, 개발 협업까지</Highlight> 경험한{' '}
+            <Highlight>UI/UX Designer</Highlight> 이승현입니다.
           </Heading>
           <Card>
             <CardBody>
@@ -117,23 +116,15 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   <List spacing={3} pt="2">
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      HTML/CSS, 반응형 웹, 접근성을 고려한 마크업에 능숙하며, 시멘틱 구조를 중요하게 생각합니다.
+                      디자인부터 퍼블리싱, 프론트 개발까지 직접 경험한 UI/UX 디자이너입니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      디자이너 없이도 주어진 요구사항을 분석해 퍼블리싱과 프론트엔드 구현까지 수행할 수 있습니다.
+                      구현 가능성을 고려한 설계를 합니다. 개발자와 같은 언어로 대화할 수 있습니다.
                     </ListItem>
                     <ListItem>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      React를 활용한 컴포넌트 기반 UI 구성 및 인터랙션 구현 경험이 있습니다.
-                    </ListItem>
-                    <ListItem>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
-                      다양한 툴에 익숙하며, 사용자 흐름과 기획 의도에 대한 이해를 높이기 위해 꾸준히 학습하고 있습니다.
-                    </ListItem>
-                    <ListItem>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
-                      사용자 인터랙션, 애니메이션, 데이터 시각화 등 인터랙티브 웹에도 높은 관심을 가지고 구현해왔습니다.
+                      컴포넌트 기반 설계로 일관된 UX와 빠른 협업을 지향합니다.
                     </ListItem>
                   </List>
                 </Box>
@@ -143,35 +134,41 @@ const About = forwardRef<HTMLDivElement>((_props, ref) => {
                   </Heading>
                   <List spacing={3} pt="2">
                     <ListItem>
-                      <Text fontWeight="bold" mb={2}>
-                        2024.02 - 현재 : ㈜에코씨앤에이 (프론트엔드 개발자)
-                      </Text>
+                      <Box display="flex" flexDirection="column" mb={2}>
+                        <Text fontWeight="bold">2025.06 - 현재 : ㈜에이다루트 (UI/UX Designer & Publisher)</Text>
+                      </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          환경 플랫폼 ‘YPSILON’의 UI/UX 기획, 화면 설계 및 기능 구현
+                          기획안 기반 UI 구현·퍼블리싱 및 UI/UX 검수, 기획·개발 조직 간 협업
                           <br />
-                          사용자 메뉴얼 제작 및 프론트엔드 유지보수 대응 경험
+                          일관성 없는 UI 개선으로 사용성 강화 · UI 이슈 신속 대응으로 운영 안정성 향상
                         </Text>
                       </Box>
                     </ListItem>
+
                     <ListItem>
-                      2023.03 - 2023.11 : 제로베이스 (프론트엔드 취업 스쿨 수료)
+                      <Box mb={2}>
+                        <Text fontWeight="bold">2024.02 - 2025.05 : ㈜에코씨앤에이 (프론트엔드 개발자)</Text>
+                      </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          React, JavaScript, Git, REST API 등 실습 프로젝트 수행
+                          환경 플랫폼 YPSILON 화면 설계·피그마 작업, 반응형 퍼블리싱, 시각화 자료 구현
+                          <br />
+                          와이어프레임 및 컴포넌트 정의로 개발 협업 효율화
                         </Text>
                       </Box>
                     </ListItem>
+
                     <ListItem>
-                      2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)
+                      <Box mb={2}>
+                        <Text fontWeight="bold">2021.09 - 2023.03 : 스튜디오앤홈 (웹 디자이너)</Text>
+                      </Box>
                       <Box borderLeft="4px solid" borderColor="yellow.400" bg="gray.50" borderRadius="md" pl={4} py={2}>
                         <Text fontSize="sm" color="gray.700" lineHeight="1.6">
-                          건강, 주거, 스포츠 등 다양한 분야의 상세 페이지를 기획부터 디자인까지 수행하며 25건 이상 업무
-                          수행
+                          클라이언트 맞춤 상세페이지 기획·디자인 · 건강·주거·스포츠 등 25건 이상 제작
                         </Text>
                       </Box>
                     </ListItem>
-                    <ListItem>2016.03 - 2021.08 : 동명대학교 졸업 (시각디자인학과)</ListItem>
                   </List>
                 </Box>
               </Stack>
